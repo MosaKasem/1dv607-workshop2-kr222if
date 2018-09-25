@@ -8,9 +8,9 @@ namespace _1dv607_workshop2_kr222if
 {
     public class Member
     {
-        private string _name;
-        private string _memberID;
-        private string _personalNumber;
+        private string   _name;
+        private int      _memberID;
+        private int      _personalNumber;
 
         public string Name
         {
@@ -18,8 +18,18 @@ namespace _1dv607_workshop2_kr222if
             set { if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException(nameof(value));
                     _name = value; }
         }
-        public Member(string _name, string _memberID, string _personalNumber) {
-            
+
+        public int MemberID
+        {
+            get { return _memberID; }
+            set { _memberID = value; }
+        }
+
+        public int PersonalNumber
+        {
+            get { return _personalNumber; }
+            set { if (value < 0 || value > 1000) throw new ArgumentException("Personal Number must be between 1-1000");
+                    _personalNumber = value; }
         }
     }
 }
