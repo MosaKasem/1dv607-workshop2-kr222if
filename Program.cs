@@ -13,11 +13,15 @@ namespace _1dv607_workshop2_kr222if
             Console.WriteLine("Hello World!");
             Member member = new Member();
             try {
-            member.PersonalNumber = -1;
+            member.PersonalNumber = 20;
+            member.Name = "JohnSon";
+            member.MemberID = 25;
             } catch (Exception Ex) {
-                Console.WriteLine(Ex);
-            } 
+                Console.WriteLine(Ex.Message);
+            }
             Console.WriteLine(member.PersonalNumber);
+            Console.WriteLine(member.Name);
+            Console.WriteLine(member.MemberID);
         }
     }
 }
