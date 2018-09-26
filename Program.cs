@@ -15,9 +15,11 @@ namespace _1dv607_workshop2_kr222if
             boatType = BoatType.SailBoat;
             Boat boat = new Boat(boatType, 25);
             Member member = new Member();
+            member.Boats.Add(boat);
             
             try {
                 WriteLine(boat.boatType);
+                WriteLine(member.Boats);
 
             } catch (Exception Ex) {
                 WriteLine(Ex.Message);
