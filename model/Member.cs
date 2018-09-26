@@ -33,5 +33,14 @@ namespace _1dv607_workshop2_kr222if
                     _personalNumber = value; }
         }
         public List<Boat> Boats { get {return _memberBoats; } set { value = _memberBoats; } }
+        
+
+        /// Functionality!
+        public void RegisterBoat (Boat boat) 
+        {
+            Console.WriteLine(boat);
+            _memberBoats.Add(boat);
+            Console.WriteLine(_memberBoats);
+        }
     }
 }
