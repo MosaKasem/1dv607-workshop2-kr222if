@@ -11,11 +11,13 @@ namespace _1dv607_workshop2_kr222if
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Boat boat = new Boat();
+            BoatType boatType;
+            boatType = BoatType.SailBoat;
+            Boat boat = new Boat(boatType, 25);
             Member member = new Member();
+            
             try {
-
+                WriteLine(boat.boatType);
 
             } catch (Exception Ex) {
                 WriteLine(Ex.Message);

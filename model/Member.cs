@@ -20,7 +20,6 @@ namespace _1dv607_workshop2_kr222if
             set { if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException(nameof(value));
                     _name = value; }
         }
-
         public int MemberID
         {
             get { return _memberID; }
@@ -34,7 +33,5 @@ namespace _1dv607_workshop2_kr222if
                     _personalNumber = value; }
         }
         public List<Boat> Boats { get {return _memberBoats; } set { value = _memberBoats; } }
-
-
     }
 }

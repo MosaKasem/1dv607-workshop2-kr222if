@@ -6,12 +6,12 @@ using System.Collections.Generic;
 
 namespace _1dv607_workshop2_kr222if
 {
+    public enum BoatType {SailBoat, Motorsailer, Kayak, Other}
     public class Boat
     {
         private double _lenght; 
         private string _boatType;
-        public enum BoatType
-        {SailBoat, Motorsailer, Kayak, Other}
+        
         public double Length 
         {
             get { return _lenght; }
