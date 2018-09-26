@@ -15,9 +15,6 @@ namespace _1dv607_workshop2_kr222if
         private int         _personalNumber ;
         private List<Boat>  _memberBoats    ;
 
-
-
-
         /* Getters and Setters */
         public string Name
         {
@@ -43,11 +40,15 @@ namespace _1dv607_workshop2_kr222if
 
         /// <summary>
         /// 
-        /// </summary>
+        /// </summary>ö
         /// <param name="boat"></param>
         public void RegisterBoat (Boat boat) 
         {
             Boats.Add(boat);
+        }
+        public void DeleteBoat () {
+            // TODO: Add Delete Boat functionality
+            throw new NotImplementedException();
         }
         public Member(string name, int personalNumber, int memberID)
         {
@@ -55,6 +56,10 @@ namespace _1dv607_workshop2_kr222if
             MemberID        =          memberID;
             PersonalNumber  =    personalNumber;
             Boats           =  new List<Boat>();
+        }
+        public List<string> toString() 
+        {
+            return Boats.Select(boat => boat.ToString()).ToList();
         }
     }
 }
