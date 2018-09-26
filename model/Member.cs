@@ -57,9 +57,16 @@ namespace _1dv607_workshop2_kr222if
             PersonalNumber  =    personalNumber;
             Boats           =  new List<Boat>();
         }
-        public List<string> toString() 
+        public List<string> toString(string listType)
         {
+            switch (listType)
+            {
+                case listType == "Compant";
+                break;
+                default:
+            }
             return Boats.Select(boat => boat.ToString()).ToList();
+
         }
     }
 }
