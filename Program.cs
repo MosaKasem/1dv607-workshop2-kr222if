@@ -3,6 +3,7 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using static System.Console;
 
 namespace _1dv607_workshop2_kr222if
 {
@@ -11,17 +12,14 @@ namespace _1dv607_workshop2_kr222if
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Boat boat = new Boat();
             Member member = new Member();
             try {
-            member.PersonalNumber = 20;
-            member.Name = "JohnSon";
-            member.MemberID = 25;
+
+
             } catch (Exception Ex) {
-                Console.WriteLine(Ex.Message);
+                WriteLine(Ex.Message);
             }
-            Console.WriteLine(member.PersonalNumber);
-            Console.WriteLine(member.Name);
-            Console.WriteLine(member.MemberID);
         }
     }
 }

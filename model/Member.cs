@@ -8,9 +8,11 @@ namespace _1dv607_workshop2_kr222if
 {
     public class Member
     {
-        private string   _name;
-        private int      _memberID;
-        private int      _personalNumber;
+        //
+        public string       _name           ;
+        private int         _memberID       ;
+        private int         _personalNumber ;
+        private List<Boat>  _memberBoats    ;
 
         public string Name
         {
@@ -31,5 +33,8 @@ namespace _1dv607_workshop2_kr222if
             set { if (value < 0 || value > 1000) throw new ArgumentException("Personal Number must be between 1-1000");
                     _personalNumber = value; }
         }
+        public List<Boat> Boats { get {return _memberBoats; } set { value = _memberBoats; } }
+
+
     }
 }
