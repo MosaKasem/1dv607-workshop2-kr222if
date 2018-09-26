@@ -11,11 +11,11 @@ namespace _1dv607_workshop2_kr222if
     {
         static void Main(string[] args)
         {
-            BoatTypes boatType;
-            boatType = BoatTypes.SailBoat;
+            BoatTypes boatType = BoatTypes.SailBoat;
+
             Boat boat = new Boat(boatType, 25);
-/*             Member member = new Member();
-            member.RegisterBoat(boat); */
+            Member member = new Member("Johnny", 25, 40);
+            member.RegisterBoat(boat);
             
             // try {
                 WriteLine(boat.BoatType);

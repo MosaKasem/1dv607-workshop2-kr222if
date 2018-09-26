@@ -8,12 +8,17 @@ namespace _1dv607_workshop2_kr222if
 {
     public class Member
     {
-        //
+
+        /* Variables */
         public string       _name           ;
         private int         _memberID       ;
         private int         _personalNumber ;
         private List<Boat>  _memberBoats    ;
 
+
+
+
+        /* Getters and Setters */
         public string Name
         {
             get { return _name; }
@@ -32,15 +37,24 @@ namespace _1dv607_workshop2_kr222if
             set { if (value < 0 || value > 1000) throw new ArgumentException("Personal Number must be between 1-1000");
                     _personalNumber = value; }
         }
-        public List<Boat> Boats { get {return _memberBoats; } set { value = _memberBoats; } }
-        
+        public List<Boat> Boats { get; set; }
 
-        /// Functionality!
+                        /* Functionality! */
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="boat"></param>
         public void RegisterBoat (Boat boat) 
         {
-            Console.WriteLine(boat);
-            _memberBoats.Add(boat);
-            Console.WriteLine(_memberBoats);
+            Boats.Add(boat);
+        }
+        public Member(string name, int personalNumber, int memberID)
+        {
+            Name            =              name;
+            MemberID        =          memberID;
+            PersonalNumber  =    personalNumber;
+            Boats           =  new List<Boat>();
         }
     }
 }
