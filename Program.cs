@@ -21,13 +21,15 @@ namespace _1dv607_workshop2_kr222if
             Boat boat3  = new Boat(boatType3, 25);
 
             Member member = new Member("Johnny", 25, 40);
-            
+
             member.RegisterBoat(boat);
             member.RegisterBoat(boat2);
             member.RegisterBoat(boat3);
             
             // try {
-                WriteLine(member.toString());
+                WriteLine(member.BoatToString());
+                Database db = new Database();
+                db.ReadDB();
 
                 // WriteLine(member.Boats);
 
