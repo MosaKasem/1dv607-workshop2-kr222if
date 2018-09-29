@@ -8,6 +8,7 @@ namespace _1dv607_workshop2_kr222if
 {
     public class MainController
     {
-        // Here
+        private Database database;
+        // public void Start()
     }
 }

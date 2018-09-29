@@ -38,10 +38,14 @@ namespace _1dv607_workshop2_kr222if
             var json = JsonConvert.SerializeObject(_members, Formatting.Indented);
             File.WriteAllText(jsonFile, json);
         }
-        public Member getID(int id)
+        public Member GetMember(int id)
         {
             var idNumber = _members.Find(member => member.MemberID == id);
             return idNumber;
+        }
+        public List<Member> GetAllMembers()
+        {
+            return _members;
         }
     }
 }

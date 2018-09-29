@@ -12,7 +12,13 @@ namespace _1dv607_workshop2_kr222if
     {
         static void Main(string[] args)
         {
-            BoatTypes boatType      = BoatTypes.SailBoat;
+
+
+            Database database = new Database();
+            Menu menu = new Menu();
+            menu.choiceMenu();
+            
+/*             BoatTypes boatType      = BoatTypes.SailBoat;
             BoatTypes boatType2     = BoatTypes.Other;
             BoatTypes boatType3     = BoatTypes.Motorsailer;
 
@@ -26,21 +32,12 @@ namespace _1dv607_workshop2_kr222if
             member.RegisterBoat(boat2);
             member.RegisterBoat(boat3);
 
-            
-            // try {
                 WriteLine(member.BoatToString());
                 Database db = new Database();
-                // db.AddMember(member);
+                WriteLine(db.GetMember(40).toString()); 
+                WriteLine(db.GetAllMembers().ToString());
+             */
 
-                System.Console.WriteLine(db.getID(40).toString()); 
-                
-                // db.saveData();
-
-                // WriteLine(member.Boats);
-
-            // } catch (Exception Ex) {
-                // WriteLine(Ex.Message);
-            // }
         }
     }
 }
