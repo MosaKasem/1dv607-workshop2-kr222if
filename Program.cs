@@ -30,8 +30,9 @@ namespace _1dv607_workshop2_kr222if
             // try {
                 WriteLine(member.BoatToString());
                 Database db = new Database();
-                db.AddMember(member);
-                db.toStringList();
+                // db.AddMember(member);
+
+                System.Console.WriteLine(db.getID(40).toString()); 
                 
                 // db.saveData();
 

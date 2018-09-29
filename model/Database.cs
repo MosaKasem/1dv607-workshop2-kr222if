@@ -22,7 +22,6 @@ namespace _1dv607_workshop2_kr222if
             {
                 json = reader.ReadToEnd();
             }
-            WriteLine(json);
             _members = JsonConvert.DeserializeObject<List<Member>>(json);
         }
         public void AddMember(Member member)
@@ -38,6 +37,11 @@ namespace _1dv607_workshop2_kr222if
         {
             var json = JsonConvert.SerializeObject(_members, Formatting.Indented);
             File.WriteAllText(jsonFile, json);
+        }
+        public Member getID(int id)
+        {
+            var idNumber = _members.Find(member => member.MemberID == id);
+            return idNumber;
         }
     }
 }

@@ -63,5 +63,9 @@ namespace _1dv607_workshop2_kr222if
         {
             return Boats.Select(boat => boat.ToString()).ToList();
         }
+        public string toString()
+        {
+            return $"{this.Name} {this.MemberID} {this.PersonalNumber}";
+        }
     }
 }
