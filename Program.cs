@@ -29,7 +29,8 @@ namespace _1dv607_workshop2_kr222if
             // try {
                 WriteLine(member.BoatToString());
                 Database db = new Database();
-                db.ReadDB();
+                db.LoadFile();
+                db.saveData();
 
                 // WriteLine(member.Boats);
 

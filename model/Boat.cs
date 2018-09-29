@@ -18,11 +18,7 @@ namespace _1dv607_workshop2_kr222if
             set { if (value <= 0 ) throw new Exception("Boat length cannot be lower than 0");
                          _lenght = value;}
         }
-        public BoatTypes BoatType 
-        {
-            get { return _boatType; }
-            set { value = _boatType; }
-        }
+        public BoatTypes BoatType { get { return _boatType; } set { value = _boatType; } }
         public Boat(BoatTypes boatType, double length)
         {
             BoatType   = boatType;
