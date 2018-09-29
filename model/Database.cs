@@ -45,6 +45,10 @@ namespace _1dv607_workshop2_kr222if
         }
         public List<Member> GetAllMembers()
         {
+            foreach (var item in _members)
+            {
+                WriteLine(item.ToString());
+            }
             return _members;
         }
     }

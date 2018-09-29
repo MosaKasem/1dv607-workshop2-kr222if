@@ -9,6 +9,15 @@ namespace _1dv607_workshop2_kr222if
     public class MainController
     {
         private Database database;
-        // public void Start()
+        private Menu menu;
+        public bool createMember(Database database, Menu menu)
+        {
+            this.database = database;
+            this.menu = menu;
+
+            this.database.GetAllMembers();
+
+            return false;
+        }
     }
 }

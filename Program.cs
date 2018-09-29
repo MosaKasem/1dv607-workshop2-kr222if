@@ -16,7 +16,9 @@ namespace _1dv607_workshop2_kr222if
 
             Database database = new Database();
             Menu menu = new Menu();
-            menu.choiceMenu();
+            MainController controller = new MainController();
+            controller.createMember(database, menu);
+            // menu.MainMenu();
             
 /*             BoatTypes boatType      = BoatTypes.SailBoat;
             BoatTypes boatType2     = BoatTypes.Other;
