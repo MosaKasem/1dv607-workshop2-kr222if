@@ -12,7 +12,7 @@ namespace _1dv607_workshop2_kr222if
         /* Variables */
         public string       _name           ;
         private int         _memberID       ;
-        private int         _personalNumber ;
+        private string         _personalNumber ;
         private List<Boat>  _memberBoats    ;
 
         /* Getters and Setters */
@@ -28,11 +28,10 @@ namespace _1dv607_workshop2_kr222if
             set { _memberID = value; }
         }
 
-        public int PersonalNumber
+        public string PersonalNumber
         {
             get { return _personalNumber; }
-            set { if (value < 0 || value > 1000) throw new ArgumentException("Personal Number must be between 1-1000");
-                    _personalNumber = value; }
+            set { _personalNumber = value; }
         }
         public List<Boat> Boats { get; set; }
 
@@ -54,7 +53,7 @@ namespace _1dv607_workshop2_kr222if
             // TODO: Add Delete Boat functionality
             throw new NotImplementedException();
         }
-        public Member(string name, int personalNumber, int memberID)
+        public Member(string name, string personalNumber, int memberID)
         {
             Name            =              name;
             MemberID        =          memberID;

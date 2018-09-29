@@ -20,7 +20,7 @@ namespace _1dv607_workshop2_kr222if
             Boat boat2  = new Boat(boatType2, 25);
             Boat boat3  = new Boat(boatType3, 25);
 
-            Member member = new Member("Johnny", 25, 40);
+            Member member = new Member("Johnny", "25", 40);
 
             member.RegisterBoat(boat);
             member.RegisterBoat(boat2);
@@ -29,7 +29,7 @@ namespace _1dv607_workshop2_kr222if
             // try {
                 WriteLine(member.BoatToString());
                 Database db = new Database();
-                db.ReadJsonFile();
+                
                 // db.saveData();
 
                 // WriteLine(member.Boats);

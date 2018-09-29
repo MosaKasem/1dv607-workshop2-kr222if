@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace _1dv607_workshop2_kr222if
 {
-    public enum BoatTypes {SailBoat, Motorsailer, Kayak, Other}
+    public enum BoatTypes {SailBoat = 0, Motorsailer = 1, Kayak = 2, Other = 3}
     public class Boat
     {
         private double _lenght; 

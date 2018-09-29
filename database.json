@@ -1,15 +1,14 @@
-{
-    "Members":[
-        {
-            "Name": "Scorp",
-            "MemberID": "2050",
-            "PersonalNumber": "2044",
-            "Boats":[
-                {
-                    "Length": 25 ,
-                    "BoatType": "Jakt"
-                }
-            ]
-        }
-    ]
-}
+[
+
+    {
+        "Name": "Scorp",
+        "MemberID": "2050",
+        "PersonalNumber": "2044",
+        "Boats":[
+            {
+                "Length": 25 ,
+                "BoatType": 0
+            }
+        ]
+    }
+]

@@ -14,24 +14,18 @@ namespace _1dv607_workshop2_kr222if
     {
         private string jsonFile = "database.json";
         private string database;
-        public List<Member> Members { get; set; }
+        public List<Member> _members;
         public Database()
         {
-            Members = new List<Member>();
+            string json;
+            using (var reader = new StreamReader(jsonFile))
+            {
+                json = reader.ReadToEnd();
+            }
+            WriteLine(json);
+            _members = JsonConvert.DeserializeObject<List<Member>>(json);
         }
 
-        public void ReadJsonFile()
-        {
-            database = File.ReadAllText(jsonFile);
-            WriteLine(database.GetType());
 
-            WriteLine(database);
-        }
-        public void saveData()
-        {
-            /* Database db = JsonConvert.DeserializeObject<Database>(database);
-            WriteLine(db); */
-
-        }
     }
 }
