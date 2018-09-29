@@ -1,19 +1,16 @@
-{  
-  "Members":
-  [
+{
+  "Members": [
     {
-
-    "id": 2,  
-    "name": "Mukesh Kumar",  
-    "memberID": "El Camino Real",  
-    "personalNumber": "2323",
-    "Boats": [  
-      {  
-        "BoatType": "Kayak",  
-        "Length": 25
-      }
-    ]
-  }
-    
+      "id": 2,
+      "name": "Mukesh Kumar",
+      "memberID": "El Camino Real",
+      "personalNumber": "2323",
+      "Boats": [
+        {
+          "BoatType": "Kayak",
+          "Length": 25
+        }
+      ]
+    }
   ]
-}  
+}

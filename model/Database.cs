@@ -13,32 +13,43 @@ namespace _1dv607_workshop2_kr222if
     public class Database
     {
         private string json;
+        private string[] database;
         public List<Member> Members {get;set;}
         public Database()
         {
-            Members = new List<Member>();
+            json = File.ReadAllText("users.json");
+            WriteLine(json);
+            Members = JsonConvert.DeserializeObject<List<Member>>(json);
+            WriteLine(Members);
+            // Members = new List<Member>();
         }
+
         public void ReadDB()
         {
-            Database db;
+            var Members = new List<Member>();
+            string[] json;
+            // string db = @".\users.json";
+            using (var reader = new StreamReader(@".\data.json"))
+            {
 
-            string test = @".\users.json";
+            }
+            
+/*             Database db;
 
             string json;
-            List<Member> database;
+            List<Member> database; */
 /*             using (var reader = File.OpenRead(@".\users.json")) 
             {
                 json = File.ReadAllText(reader);
             } */
-            using (var reader = new StreamReader(@".\users.json"))
+/*             using (var reader = new StreamReader(@".\users.json"))
             {
                 json = reader.ReadToEnd();
                 var jsonObj = JObject.Parse(json);
-                WriteLine(jsonObj.GetType());
+                // WriteLine(jsonObj.GetType());
                 database = JsonConvert.DeserializeObject<List<Member>>(json);
-            }
-                var testing = JsonConvert.DeserializeObject<Database>(File.ReadAllText(test));
-                WriteLine(testing);
+            } */
+
             // WriteLine(jsonObj);
                 // Database db = JsonConvert.DeserializeObject<Database>(File.ReadAllText(json));
                 // WriteLine(db);
