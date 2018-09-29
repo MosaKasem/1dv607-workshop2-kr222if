@@ -15,7 +15,7 @@ namespace _1dv607_workshop2_kr222if
             this.database = database;
             this.menu = menu;
 
-            this.database.GetAllMembers();
+            this.menu.MainMenu();
 
             return false;
         }

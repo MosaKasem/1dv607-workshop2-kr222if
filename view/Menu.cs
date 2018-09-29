@@ -29,12 +29,14 @@ namespace _1dv607_workshop2_kr222if
                 }
                 catch (System.Exception Ex)
                 {
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.BackgroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = ConsoleColor.Black;
                     Console.WriteLine("\nBlyat.. Choose 1, 2 or 3.\n");
                     Console.ResetColor();
                 }
-                return result;
+                if (result == 1 || result == 2 || result == 3) {
+                    return result;
+                }
             }
         }
     }
