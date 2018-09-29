@@ -10,17 +10,16 @@ namespace _1dv607_workshop2_kr222if
     {
 
         /* Variables */
-        public string       _name           ;
+        private string       _name          ;
         private int         _memberID       ;
-        private string         _personalNumber ;
+        private string      _personalNumber ;
         private List<Boat>  _memberBoats    ;
 
         /* Getters and Setters */
         public string Name
         {
             get { return _name; }
-            set { if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException(nameof(value));
-                    _name = value; }
+            set { _name = value; }
         }
         public int MemberID
         {
@@ -55,10 +54,10 @@ namespace _1dv607_workshop2_kr222if
         }
         public Member(string name, string personalNumber, int memberID)
         {
-            Name            =              name;
-            MemberID        =          memberID;
-            PersonalNumber  =    personalNumber;
-            Boats           =  new List<Boat>();
+            this.Name            =              name;
+            this.MemberID        =          memberID;
+            this.PersonalNumber  =    personalNumber;
+            this.Boats           =  new List<Boat>();
         }
         public List<string> BoatToString()
         {

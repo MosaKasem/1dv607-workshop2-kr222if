@@ -17,9 +17,6 @@ namespace _1dv607_workshop2_kr222if
         public List<Member> _members;
         public Database()
         {
-            if (!File.Exists(jsonFile)) {
-                CreateDataBaseModel();
-            }
             string json;
             using (var reader = new StreamReader(jsonFile))
             {
@@ -28,20 +25,10 @@ namespace _1dv607_workshop2_kr222if
             WriteLine(json);
             _members = JsonConvert.DeserializeObject<List<Member>>(json);
         }
-        public void CreateDataBaseModel()
-        {
-            var dummy = new Member("Jimmy", "25", 33);
-            dummy.RegisterBoat(new Boat(BoatTypes.Kayak, 25));
-            _members.Add(dummy);
-            using (StreamWriter createFile = File.CreateText(jsonFile))
-            {
-                createFile.WriteLine(JsonConvert.SerializeObject(_members));
-            }
-        }
         public void AddMember(Member member)
         {
             _members.Add(member);
-            // SaveToDataBase();
+            SaveToDataBase();
         }
         public List<string> toStringList()
         {
@@ -49,7 +36,7 @@ namespace _1dv607_workshop2_kr222if
         }
         public void SaveToDataBase()
         {
-            var json = JsonConvert.SerializeObject(_members);
+            var json = JsonConvert.SerializeObject(_members, Formatting.Indented);
             File.WriteAllText(jsonFile, json);
         }
     }
