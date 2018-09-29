@@ -25,10 +25,13 @@ namespace _1dv607_workshop2_kr222if
             member.RegisterBoat(boat);
             member.RegisterBoat(boat2);
             member.RegisterBoat(boat3);
+
             
             // try {
                 WriteLine(member.BoatToString());
                 Database db = new Database();
+                db.AddMember(member);
+                db.toStringList();
                 
                 // db.saveData();
 

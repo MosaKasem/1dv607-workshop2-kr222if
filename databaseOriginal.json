@@ -1,0 +1,12 @@
+[
+    {
+    "Name":"Scorp",
+    "MemberID":20,
+    "PersonalNumber":"2044",
+    "Boats":[
+        {
+            "Length":25.0,
+            "BoatType":0}
+        ]
+    }
+]

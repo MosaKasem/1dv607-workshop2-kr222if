@@ -25,7 +25,19 @@ namespace _1dv607_workshop2_kr222if
             WriteLine(json);
             _members = JsonConvert.DeserializeObject<List<Member>>(json);
         }
-
-
+        public void AddMember(Member member)
+        {
+            _members.Add(member);
+            SaveToDataBase();
+        }
+        public List<string> toStringList()
+        {
+            return _members.Select(_members => _members.ToString()).ToList();
+        }
+        public void SaveToDataBase()
+        {
+            var json = JsonConvert.SerializeObject(_members);
+            File.WriteAllText(jsonFile, json);
+        }
     }
 }
