@@ -27,11 +27,12 @@ namespace _1dv607_workshop2_kr222if
                     if (result != 1 && result != 2 && result != 3)
                         throw new Exception();
                 }
-                catch (System.Exception Ex)
+                catch (Exception Ex)
                 {
                     Console.BackgroundColor = ConsoleColor.Gray;
                     Console.ForegroundColor = ConsoleColor.Black;
                     Console.WriteLine("\nBlyat.. Choose 1, 2 or 3.\n");
+                    Console.WriteLine(Ex.Message);
                     Console.ResetColor();
                 }
                 if (result == 1 || result == 2 || result == 3) {

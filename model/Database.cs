@@ -12,6 +12,7 @@ namespace _1dv607_workshop2_kr222if
 {
     public class Database
     {
+        private static Random randomer = new Random();
         private string jsonFile = "database.json";
         private string database;
         public List<Member> _members;
@@ -50,6 +51,10 @@ namespace _1dv607_workshop2_kr222if
                 WriteLine(item.ToString());
             } */
             return _members;
+        }
+        public long GenerateID()
+        {
+            return _members.Count * randomer.Next(20, 25) / randomer.Next(2, 5) + DateTime.Now.ToFileTime();
         }
     }
 }

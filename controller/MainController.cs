@@ -21,7 +21,7 @@ namespace _1dv607_workshop2_kr222if
             {
                 try
                 {
-                    userChooses = this.menu.MainMenu("Choose 1 - view members || Choose 2 - create member || Choose 3 - call trump\n");
+                    userChooses = this.menu.MainMenu("Choose 1 - view members || Choose 2 - create member || Choose 3 - exit app\n");
                     switch (userChooses)
                     {
                         case 1:
@@ -29,9 +29,12 @@ namespace _1dv607_workshop2_kr222if
                         case 2:
                             string name = menu.Register("Name: ____");
                             string personalNumber = menu.Register("PersonalNumber: ____");
+                            long memberID = database.GenerateID();
+                            WriteLine(memberID);
+                            Member member = new Member(name, personalNumber, memberID);
                             break;
                         case 3:
-                            WriteLine("Am the best, I do what i want, ok am hanging up now, bye\n");
+                            WriteLine("Bye bye!\n");
                         break;
                     }
                 }

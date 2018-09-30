@@ -11,7 +11,7 @@ namespace _1dv607_workshop2_kr222if
 
         /* Variables */
         private string       _name          ;
-        private int         _memberID       ;
+        private long         _memberID       ;
         private string      _personalNumber ;
         private List<Boat>  _memberBoats    ;
 
@@ -21,7 +21,7 @@ namespace _1dv607_workshop2_kr222if
             get { return _name; }
             set { _name = value; }
         }
-        public int MemberID
+        public long MemberID
         {
             get { return _memberID; }
             set { _memberID = value; }
@@ -52,7 +52,7 @@ namespace _1dv607_workshop2_kr222if
             // TODO: Add Delete Boat functionality
             throw new NotImplementedException();
         }
-        public Member(string name, string personalNumber, int memberID)
+        public Member(string name, string personalNumber, long memberID)
         {
             this.Name            =              name;
             this.MemberID        =          memberID;
