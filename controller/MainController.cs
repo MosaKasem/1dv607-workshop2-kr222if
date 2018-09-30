@@ -16,20 +16,30 @@ namespace _1dv607_workshop2_kr222if
             this.database = database;
             this.menu = menu;
 
-            int userChooses = this.menu.MainMenu();
-            do 
+            int userChooses = 0;
+            while (userChooses != 3)
             {
-                switch (userChooses)
+                try
                 {
-                    case 1:
-                    throw new Exception("not implemented");
-                    // break;
-                    case 2:
-                    // menu.RegisterNewUser();
-                    break;
+                    userChooses = this.menu.MainMenu("Choose 1 - view members || Choose 2 - create member || Choose 3 - call trump\n");
+                    switch (userChooses)
+                    {
+                        case 1:
+                            throw new Exception("View members not implemented\n");
+                        case 2:
+                            string name = menu.Register("Name: ____");
+                            break;
+                        case 3:
+                            WriteLine("Am the best, I do what i want, ok am hanging up now, bye\n");
+                        break;
+                    }
                 }
-                return true;
-            } while (userChooses != 3);
+
+                catch (Exception Ex)
+                {
+                    WriteLine(Ex.Message);
+                }
+            }
             return false;
         }
     }

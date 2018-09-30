@@ -9,10 +9,10 @@ namespace _1dv607_workshop2_kr222if
 {
     public class Menu
     {
-        public int MainMenu()
+        public int MainMenu(string message)
         {
             WriteLine("Cheeky breeky, welcome to jellyblyat club!!");
-            WriteLine("Choose 1 - view members || Choose 2 - create member || Choose 3 - call trump" );
+            WriteLine(message);
             return ValidateInputChoice();
         }
         public int ValidateInputChoice()
@@ -39,9 +39,14 @@ namespace _1dv607_workshop2_kr222if
                 }
             }
         }
-/*         public int RegisterNewUser()
+        public string Register(string question)
         {
-
-        } */
+            WriteLine("\n", question);
+            return ValidateInputData();
+        }
+        public string ValidateInputData()
+        {
+            return "This far";
+        }
     }
 }
