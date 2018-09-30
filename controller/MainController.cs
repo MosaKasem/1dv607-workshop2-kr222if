@@ -25,7 +25,15 @@ namespace _1dv607_workshop2_kr222if
                     switch (userChooses)
                     {
                         case 1:
-                            int tryParse = int.Parse(menu.AskUser("Choose 1 - verbose | Choose 2 - Compact"));
+                            int layoutTheme = int.Parse(menu.AskUser("Choose 1 - verbose | Choose 2 - Compact"));
+                            if (layoutTheme == 1) {
+                                foreach (Member member in database.GetAllMembers()) {
+                                    
+                                }
+
+                            } else if (layoutTheme == 2) {
+
+                            }
                             break;
                         case 2:
                             string name = menu.AskUser("Name: ____");
@@ -42,7 +50,11 @@ namespace _1dv607_workshop2_kr222if
 
                 catch (Exception Ex)
                 {
+                    ForegroundColor = ConsoleColor.Red;
+                    WriteLine("----------------------------------------");
                     WriteLine(Ex.Message);
+                    WriteLine("----------------------------------------");
+                    ResetColor();
                 }
             }
             return false;

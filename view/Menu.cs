@@ -11,7 +11,6 @@ namespace _1dv607_workshop2_kr222if
     {
         public int MainMenu(string message)
         {
-            WriteLine("Cheeky breeky, welcome to jellyblyat club!!");
             WriteLine(message);
             return ValidateInputChoice();
         }
@@ -25,11 +24,11 @@ namespace _1dv607_workshop2_kr222if
                 try
                 {
                     if (result != 1 && result != 2 && result != 3)
-                        throw new Exception("1 View | 2 Create | 3 Exit");
+                        throw new Exception("1 View | 2 Create | 3 Exit\n");
                 }
                 catch (Exception Ex)
                 {
-                    Console.BackgroundColor = ConsoleColor.Gray;
+                    Console.BackgroundColor = ConsoleColor.Red;
                     Console.ForegroundColor = ConsoleColor.Black;
                     Console.WriteLine(Ex.Message);
                     Console.ResetColor();
