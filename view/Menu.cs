@@ -11,11 +11,11 @@ namespace _1dv607_workshop2_kr222if
     {
         public int MainMenu()
         {
-            WriteLine("Blyat, welcom to main maneu!!");
+            WriteLine("Cheeky breeky, welcome to jellyblyat club!!");
             WriteLine("Choose 1 - view members || Choose 2 - create member || Choose 3 - call trump" );
-            return UserMenuChoice();
+            return ValidateInputChoice();
         }
-        public int UserMenuChoice()
+        public int ValidateInputChoice()
         {
             bool choice;
             int result;
@@ -39,5 +39,9 @@ namespace _1dv607_workshop2_kr222if
                 }
             }
         }
+/*         public int RegisterNewUser()
+        {
+
+        } */
     }
 }
