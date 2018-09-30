@@ -54,7 +54,7 @@ namespace _1dv607_workshop2_kr222if
         }
         public long GenerateID()
         {
-            return _members.Count * randomer.Next(20, 25) / randomer.Next(2, 5) + DateTime.Now.ToFileTime();
+            return DateTime.Now.Millisecond;
         }
     }
 }
