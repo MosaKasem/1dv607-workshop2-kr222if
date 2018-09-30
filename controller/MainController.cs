@@ -28,6 +28,7 @@ namespace _1dv607_workshop2_kr222if
                             throw new Exception("View members not implemented\n");
                         case 2:
                             string name = menu.Register("Name: ____");
+                            string personalNumber = menu.Register("PersonalNumber: ____");
                             break;
                         case 3:
                             WriteLine("Am the best, I do what i want, ok am hanging up now, bye\n");

@@ -41,12 +41,16 @@ namespace _1dv607_workshop2_kr222if
         }
         public string Register(string question)
         {
-            WriteLine("\n", question);
+            WriteLine(question);
             return ValidateInputData();
         }
         public string ValidateInputData()
         {
-            return "This far";
+            string userSuggests;
+            while (userSuggests != null)
+            {
+                
+            }
         }
     }
 }
