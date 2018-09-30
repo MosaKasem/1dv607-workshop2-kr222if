@@ -94,7 +94,7 @@ namespace _1dv607_workshop2_kr222if
         /// <returns>verboseList</returns>
         public string VerboseTheme()
         {
-            string verboseList = $"Member: {this.Name}\n {this._personalNumber}\n  {this._memberID}\n   ";
+            string verboseList = $"Member: {this.Name}\n PersonalNumber: {this._personalNumber}\n  MemberID: {this._memberID}\n   ";
             foreach (var boat in Boats)
             {
                 verboseList += $"{string.Join("\n\t", BoatToString())}";
