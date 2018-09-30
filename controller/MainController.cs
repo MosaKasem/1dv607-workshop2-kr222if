@@ -30,8 +30,8 @@ namespace _1dv607_workshop2_kr222if
                             string name = menu.Register("Name: ____");
                             string personalNumber = menu.Register("PersonalNumber: ____");
                             long memberID = database.GenerateID();
-                            WriteLine(memberID);
                             Member member = new Member(name, personalNumber, memberID);
+                            database.AddMember(member);
                             break;
                         case 3:
                             WriteLine("Bye bye!\n");

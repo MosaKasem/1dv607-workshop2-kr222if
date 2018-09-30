@@ -44,12 +44,17 @@ namespace _1dv607_workshop2_kr222if
             var idNumber = _members.Find(member => member.MemberID == id);
             return idNumber;
         }
+        public void DeleteMember(long id)
+        {
+            foreach (var member in _members)
+            {
+                if (member.id == id)
+                    _members.Remove(member);
+            }
+            SaveToDataBase();
+        }
         public List<Member> GetAllMembers()
         {
-/*             foreach (var item in _members)
-            {
-                WriteLine(item.ToString());
-            } */
             return _members;
         }
         public long GenerateID()

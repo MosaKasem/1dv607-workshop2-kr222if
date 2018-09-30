@@ -28,5 +28,11 @@
         "BoatType": 0
       }
     ]
+  },
+  {
+    "Name": "25",
+    "MemberID": 709,
+    "PersonalNumber": "25",
+    "Boats": []
   }
 ]
