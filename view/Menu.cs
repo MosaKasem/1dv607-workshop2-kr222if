@@ -52,7 +52,14 @@ namespace _1dv607_workshop2_kr222if
             {
                 userSuggests = ReadLine();
                 if (userSuggests != "" || !string.IsNullOrWhiteSpace(userSuggests))
+                {
                 return userSuggests;
+                } else {
+                    BackgroundColor = ConsoleColor.Red;
+                    ForegroundColor = ConsoleColor.White;
+                    WriteLine("\nMust provide something!\n");
+                    ResetColor();
+                }
             }
         }
     }

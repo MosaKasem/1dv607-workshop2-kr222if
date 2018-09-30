@@ -48,7 +48,7 @@ namespace _1dv607_workshop2_kr222if
         {
             foreach (var member in _members)
             {
-                if (member.id == id)
+                if (member.MemberID == id)
                     _members.Remove(member);
             }
             SaveToDataBase();
