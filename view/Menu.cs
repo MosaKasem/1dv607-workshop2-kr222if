@@ -25,13 +25,12 @@ namespace _1dv607_workshop2_kr222if
                 try
                 {
                     if (result != 1 && result != 2 && result != 3)
-                        throw new Exception();
+                        throw new Exception("1 View | 2 Create | 3 Exit");
                 }
                 catch (Exception Ex)
                 {
                     Console.BackgroundColor = ConsoleColor.Gray;
                     Console.ForegroundColor = ConsoleColor.Black;
-                    Console.WriteLine("\nBlyat.. Choose 1, 2 or 3.\n");
                     Console.WriteLine(Ex.Message);
                     Console.ResetColor();
                 }
@@ -40,7 +39,7 @@ namespace _1dv607_workshop2_kr222if
                 }
             }
         }
-        public string Register(string question)
+        public string AskUser(string question)
         {
             WriteLine(question);
             return ValidateInputData();

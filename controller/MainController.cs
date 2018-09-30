@@ -25,10 +25,11 @@ namespace _1dv607_workshop2_kr222if
                     switch (userChooses)
                     {
                         case 1:
-                            throw new Exception("View members not implemented\n");
+                            int tryParse = int.Parse(menu.AskUser("Choose 1 - verbose | Choose 2 - Compact"));
+                            break;
                         case 2:
-                            string name = menu.Register("Name: ____");
-                            string personalNumber = menu.Register("PersonalNumber: ____");
+                            string name = menu.AskUser("Name: ____");
+                            string personalNumber = menu.AskUser("PersonalNumber: ____");
                             long memberID = database.GenerateID();
                             Member member = new Member(name, personalNumber, memberID);
                             database.AddMember(member);
