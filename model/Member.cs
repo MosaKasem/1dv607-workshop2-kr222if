@@ -8,17 +8,20 @@ namespace _1dv607_workshop2_kr222if
 {
     public class Member
     {
-
+        /* --------- */
         /* Variables */
+        /* --------- */
         private string       _name          ;
         private long         _memberID       ;
         private string      _personalNumber ;
         private List<Boat>  _memberBoats    ;
 
-
         public int NumberOfBoats {get {return Boats.Count; }}
 
+        /* ------------------- */
         /* Getters and Setters */
+        /* ------------------- */
+
         public string Name
         {
             get { return _name; }
@@ -36,11 +39,14 @@ namespace _1dv607_workshop2_kr222if
             set { _personalNumber = value; }
         }
         public List<Boat> Boats { get; set; }
-
-                        /* Functionality! */
+        
+        
+        /* -------------- */
+        /* Functionality! */
+        /* -------------- */
 
         /// <summary>
-        /// 
+        /// Registers a boat to a member
         /// </summary>ö
         /// <param name="boat"></param>
         public void RegisterBoat (Boat boat) 
@@ -55,6 +61,12 @@ namespace _1dv607_workshop2_kr222if
             // TODO: Add Delete Boat functionality
             throw new NotImplementedException();
         }
+        /// <summary>
+        /// Constructor, creates a member
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="personalNumber"></param>
+        /// <param name="memberID"></param>
         public Member(string name, string personalNumber, long memberID)
         {
             this.Name            =              name;
@@ -66,9 +78,26 @@ namespace _1dv607_workshop2_kr222if
         {
             return Boats.Select(boat => boat.ToString()).ToList();
         }
+        /// <summary>
+        /// CompactList accordingly to the requirement
+        /// </summary>
+        /// <returns>CompactList</returns>
         public string CompactTheme()
         {
             return $"ID number: {this.MemberID}\n Member: {this.Name} \n Boats: {this.NumberOfBoats} ";
+        }
+        /// <summary>
+        /// VerboseList accordingly to the requirement
+        /// </summary>
+        /// <returns>verboseList</returns>
+        public string VerboseTheme()
+        {
+            string verboseList = $"Member: {this.Name}\n {this._personalNumber}\n  {this._memberID}\n   ";
+            foreach (var boat in Boats)
+            {
+                verboseList += $"{BoatToString()}";
+            }
+            return verboseList;
         }
     }
 }
