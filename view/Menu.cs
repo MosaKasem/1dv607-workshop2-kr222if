@@ -60,5 +60,11 @@ namespace _1dv607_workshop2_kr222if
                 }
             }
         }
+        public void ShowInformation(string information)
+        {
+            WriteLine("------------------------------------------");
+            WriteLine(information);
+            WriteLine("------------------------------------------");
+        }
     }
 }

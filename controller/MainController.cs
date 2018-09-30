@@ -25,10 +25,10 @@ namespace _1dv607_workshop2_kr222if
                     switch (userChooses)
                     {
                         case 1:
-                            int layoutTheme = int.Parse(menu.AskUser("Choose 1 - verbose | Choose 2 - Compact"));
+                            int layoutTheme = int.Parse(menu.AskUser("Choose 1 - compact | Choose 2 - verbose"));
                             if (layoutTheme == 1) {
                                 foreach (Member members in database.GetAllMembers()) {
-                                    members.CompactTheme();
+                                    menu.ShowInformation(members.CompactTheme());
                                 }
 
                             } else if (layoutTheme == 2) {

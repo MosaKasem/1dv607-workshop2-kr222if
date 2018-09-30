@@ -68,7 +68,7 @@ namespace _1dv607_workshop2_kr222if
         }
         public string CompactTheme()
         {
-            return $"Member:{this.Name} Id:{this.NumberOfBoats} {this.MemberID}";
+            return $"ID number: {this.MemberID}\n Member: {this.Name} \n Boats: {this.NumberOfBoats} ";
         }
     }
 }
