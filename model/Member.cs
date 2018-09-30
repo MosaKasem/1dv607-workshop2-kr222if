@@ -15,6 +15,9 @@ namespace _1dv607_workshop2_kr222if
         private string      _personalNumber ;
         private List<Boat>  _memberBoats    ;
 
+
+        public int NumberOfBoats {get {return Boats.Count; }}
+
         /* Getters and Setters */
         public string Name
         {
@@ -63,9 +66,9 @@ namespace _1dv607_workshop2_kr222if
         {
             return Boats.Select(boat => boat.ToString()).ToList();
         }
-        public override string ToString()
+        public string CompactTheme()
         {
-            return $"{this.Name} {this.MemberID} {this.PersonalNumber}";
+            return $"Member:{this.Name} Id:{this.NumberOfBoats} {this.MemberID}";
         }
     }
 }
