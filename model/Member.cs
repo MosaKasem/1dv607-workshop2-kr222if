@@ -3,6 +3,8 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using static System.Console;
+
 
 namespace _1dv607_workshop2_kr222if
 {
@@ -95,7 +97,7 @@ namespace _1dv607_workshop2_kr222if
             string verboseList = $"Member: {this.Name}\n {this._personalNumber}\n  {this._memberID}\n   ";
             foreach (var boat in Boats)
             {
-                verboseList += $"{BoatToString()}";
+                verboseList += $"{string.Join("\n\t", BoatToString())}";
             }
             return verboseList;
         }

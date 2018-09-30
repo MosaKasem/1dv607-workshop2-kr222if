@@ -32,7 +32,9 @@ namespace _1dv607_workshop2_kr222if
                                 }
 
                             } else if (layoutTheme == 2) {
-
+                                foreach (Member members in database.GetAllMembers()) {
+                                    menu.ShowInformation(members.VerboseTheme());
+                                }
                             }
                             break;
                         case 2:
