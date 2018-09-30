@@ -46,10 +46,12 @@ namespace _1dv607_workshop2_kr222if
         }
         public string ValidateInputData()
         {
-            string userSuggests;
-            while (userSuggests != null)
+            string userSuggests = "";
+            while (true)
             {
-                
+                userSuggests = ReadLine();
+                if (userSuggests != "" || !string.IsNullOrWhiteSpace(userSuggests))
+                return userSuggests;
             }
         }
     }
