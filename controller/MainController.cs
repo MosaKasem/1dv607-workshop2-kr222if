@@ -37,9 +37,9 @@ namespace _1dv607_workshop2_kr222if
                                 }
                             }
 
-                                int userChoosesMember = int.Parse(menu.AskUser(this.menu.AskUser("Select member by ID")));
+                                int userChoosesMember = int.Parse(this.menu.AskUser("Select member by ID")));
                                 Member memberFromDb = database.GetMember(userChoosesMember);
-
+                                menu.ShowInformation(memberFromDb.VerboseTheme());
 
                             break;
                         case 2:
