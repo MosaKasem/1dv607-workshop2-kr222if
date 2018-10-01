@@ -26,13 +26,18 @@ namespace _1dv607_workshop2_kr222if
                     {
                         case 1:
                             int layoutTheme = int.Parse(menu.AskUser("Choose 1 - compact | Choose 2 - verbose"));
-                            if (layoutTheme == 1) {
-                                foreach (Member members in this.database.GetAllMembers()) {
+                            if (layoutTheme == 1)
+                            {
+                                foreach (Member members in this.database.GetAllMembers())
+                                {
                                     this.menu.ShowInformation(members.CompactTheme());
                                 }
 
-                            } else if (layoutTheme == 2) {
-                                foreach (Member members in this.database.GetAllMembers()) {
+                            }
+                            else if (layoutTheme == 2)
+                            {
+                                foreach (Member members in this.database.GetAllMembers())
+                                {
                                     this.menu.ShowInformation(members.VerboseTheme());
                                 }
                             }
@@ -46,18 +51,26 @@ namespace _1dv607_workshop2_kr222if
                             switch (userChoosesOption)
                             {
                                 case 1:
-                            string updateName = menu.AskUser("Name: ____");
-                            string updatedPersonalNum = menu.AskUser("PersonalNumber: ____");
-                            memberFromDb.Name = updateName;
-                            memberFromDb.PersonalNumber = updatedPersonalNum;
-                            this.database.SaveToDataBase();
-                            break;
+                                    string updateName = menu.AskUser("Name: ____");
+                                    string updatedPersonalNum = menu.AskUser("PersonalNumber: ____");
+                                    memberFromDb.Name = updateName;
+                                    memberFromDb.PersonalNumber = updatedPersonalNum;
+                                    this.database.SaveToDataBase();
+                                    break;
+
                                 case 2:
-                                string userConfirm = this.menu.AskUser($"Delete User: \n{memberFromDb.CompactTheme()}?\n Confirm: Y (Capital Letter)!"); userConfirm.ToUpper();
-                                if (userConfirm == "Y") {
-                                    database.DeleteMember(userChoosesMember);
-                                }
-                                break;
+                                    string userConfirm = this.menu.AskUser($"Delete User: \n{memberFromDb.CompactTheme()}?\n Confirm: Y (Capital Letter)!"); userConfirm.ToUpper();
+                                    if (userConfirm == "Y")
+                                    {
+                                        database.DeleteMember(userChoosesMember);
+                                    }
+                                    break;
+                                case 3:
+                                    int UserChoosesBoat = this.menu.MainMenu("Choose 1 - Add Boat | Choose 2 - View Boats | Choose 3 - Delete Boat");
+                                    if (userChooses == 1) AddBoatToUser(memberFromDb);
+                                    if (userChooses == 2) ViewBoatsList(memberFromDb);
+                                    if (userChooses == 3) DeleteBoat(memberFromDb);
+                                    break;
                             }
 
                             break;
@@ -70,10 +83,9 @@ namespace _1dv607_workshop2_kr222if
                             break;
                         case 3:
                             WriteLine("Bye bye!\n");
-                        break;
+                            break;
                     }
                 }
-
                 catch (Exception Ex)
                 {
                     ForegroundColor = ConsoleColor.Red;
@@ -85,5 +97,18 @@ namespace _1dv607_workshop2_kr222if
             }
             return false;
         }
+        public void AddBoatToUser(Member member)
+        {
+            throw new MissingMethodException();
+        }
+        public void ViewBoatsList(Member member)
+        {
+            throw new MissingMethodException();
+        }
+        public void DeleteBoat(Member member)
+        {
+            throw new MissingMethodException();
+        }
     }
+
 }
