@@ -66,10 +66,15 @@ namespace _1dv607_workshop2_kr222if
                                     }
                                     break;
                                 case 3:
-                                    int UserChoosesBoat = this.menu.MainMenu("Choose 1 - Add Boat | Choose 2 - View Boats | Choose 3 - Delete Boat");
-                                    if (userChooses == 1) AddBoatToUser(memberFromDb);
-                                    if (userChooses == 2) ViewBoatsList(memberFromDb);
-                                    if (userChooses == 3) DeleteBoat(memberFromDb);
+                                    int UserChoosesBoat = this.menu.MainMenu("Choose 1 - Edit Boat | Choose 2 - View Boats | Choose 3 - Exit");
+
+                                    while (true)
+                                    {
+                                        if (userChooses == 1) AddBoatToUser(memberFromDb);
+                                        if (userChooses == 2) ViewBoatsList(memberFromDb);
+                                        if (userChooses == 3) return false;
+                                    }
+
                                     break;
                             }
 
@@ -103,7 +108,7 @@ namespace _1dv607_workshop2_kr222if
         }
         public void ViewBoatsList(Member member)
         {
-            throw new MissingMethodException();
+            if (member.Boats != null) member.BoatToString();
         }
         public void DeleteBoat(Member member)
         {

@@ -24,7 +24,7 @@ namespace _1dv607_workshop2_kr222if
                 try
                 {
                     if (result != 1 && result != 2 && result != 3)
-                        throw new Exception("1 View | 2 Create | 3 Exit\n");
+                        throw new Exception("Y u trying break me?, type 1 , 2 or 3!");
                 }
                 catch (Exception Ex)
                 {
