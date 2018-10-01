@@ -27,28 +27,50 @@ namespace _1dv607_workshop2_kr222if
                         case 1:
                             int layoutTheme = int.Parse(menu.AskUser("Choose 1 - compact | Choose 2 - verbose"));
                             if (layoutTheme == 1) {
-                                foreach (Member members in database.GetAllMembers()) {
-                                    menu.ShowInformation(members.CompactTheme());
+                                foreach (Member members in this.database.GetAllMembers()) {
+                                    this.menu.ShowInformation(members.CompactTheme());
                                 }
 
                             } else if (layoutTheme == 2) {
-                                foreach (Member members in database.GetAllMembers()) {
-                                    menu.ShowInformation(members.VerboseTheme());
+                                foreach (Member members in this.database.GetAllMembers()) {
+                                    this.menu.ShowInformation(members.VerboseTheme());
                                 }
                             }
 
-                                int userChoosesMember = int.Parse(this.menu.AskUser("Select member by ID"));
-                                Member memberFromDb = database.GetMember(userChoosesMember);
-                                menu.ShowInformation(memberFromDb.CompactTheme());
+                            int userChoosesMember = int.Parse(this.menu.AskUser("Select member by ID"));
+                            Member memberFromDb = this.database.GetMember(userChoosesMember);
 
-                                int userChoosesOption = this.menu.MainMenu("Choose 1 - edit | Choose 2 delete | choose 3 boats");
+                            this.menu.ShowInformation(memberFromDb.CompactTheme());
+
+                            int userChoosesOption = this.menu.MainMenu("Choose 1 - edit | Choose 2 - delete | choose 3 - boats");
+                            switch (userChoosesOption)
+                            {
+                                case 1:
+                                throw new Exception("Not implemented");
+                                case 2:
+                                string userConfirm = this.menu.AskUser($"Delete User: \n{memberFromDb.CompactTheme()}?\n Confirm: Y/N"); userConfirm.ToUpper();
+                                try
+                                {
+                                if (userConfirm == "Y") {
+                                    database.DeleteMember(userChoosesMember);
+                                } else {
+                                    throw new ArgumentException("Decline - going back to main menu!");
+                                }
+                                }
+                                catch (Exception Ex)
+                                {
+                                    WriteLine(Ex.Message);
+                                }
+                                break;
+                            }
+
                             break;
                         case 2:
                             string name = menu.AskUser("Name: ____");
                             string personalNumber = menu.AskUser("PersonalNumber: ____");
-                            long memberID = database.GenerateID();
+                            long memberID = this.database.GenerateID();
                             Member member = new Member(name, personalNumber, memberID);
-                            database.AddMember(member);
+                            this.database.AddMember(member);
                             break;
                         case 3:
                             WriteLine("Bye bye!\n");
