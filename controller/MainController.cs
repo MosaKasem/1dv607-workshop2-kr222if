@@ -102,7 +102,25 @@ namespace _1dv607_workshop2_kr222if
         }
         public void AddBoatToUser(Member member)
         {
-            throw new MissingMethodException();
+            int userPicksType = int.Parse(menu.AskUser("0.SailBoat | 1.Motorsailer | 2.Kayak | 3.Other "));
+            var boatType = new BoatTypes();
+            switch (userPicksType)
+            {
+                case 0:
+                    boatType = BoatTypes.SailBoat;
+                    break;
+                case 1:
+                    boatType = BoatTypes.Motorsailer;
+                    break;
+                case 2:
+                    boatType = BoatTypes.Kayak;
+                    break;
+                case 3:
+                    boatType = BoatTypes.Other;
+                    break;
+            }
+            int length = int.Parse(menu.AskUser("Length of the boat?"));
+            Boat boat = new Boat(boatType, length);
         }
         public void ViewBoatsList(Member member)
         {
