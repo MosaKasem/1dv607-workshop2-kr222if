@@ -1,9 +1,9 @@
 [
   {
     "NumberOfBoats": 1,
-    "Name": "Scorpy",
+    "Name": "Johny",
     "MemberID": 20,
-    "PersonalNumber": "23od",
+    "PersonalNumber": "234d",
     "Boats": [
       {
         "Length": 25.0,
