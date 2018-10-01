@@ -41,7 +41,7 @@ namespace _1dv607_workshop2_kr222if
         }
         public Member GetMember(long id)
         {
-            var idNumber = _members.Find(member => member.MemberID == id);
+            Member idNumber = _members.Find(member => member.MemberID == id);
             return idNumber;
         }
         public void DeleteMember(long id)

@@ -46,13 +46,17 @@ namespace _1dv607_workshop2_kr222if
                             switch (userChoosesOption)
                             {
                                 case 1:
-                                throw new Exception("Not implemented");
+                            string updateName = menu.AskUser("Name: ____");
+                            string updatedPersonalNum = menu.AskUser("PersonalNumber: ____");
+                            memberFromDb.Name = updateName;
+                            memberFromDb.PersonalNumber = updatedPersonalNum;
+                            this.database.SaveToDataBase();
+                            break;
                                 case 2:
-                                string userConfirm = this.menu.AskUser($"Delete User: \n{memberFromDb.CompactTheme()}?\n Confirm: Y/N"); userConfirm.ToUpper();
-
+                                string userConfirm = this.menu.AskUser($"Delete User: \n{memberFromDb.CompactTheme()}?\n Confirm: Y (Capital Letter)!"); userConfirm.ToUpper();
                                 if (userConfirm == "Y") {
                                     database.DeleteMember(userChoosesMember);
-                                } 
+                                }
                                 break;
                             }
 
