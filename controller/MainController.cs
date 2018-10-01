@@ -40,6 +40,8 @@ namespace _1dv607_workshop2_kr222if
                                 {
                                     this.menu.ShowInformation(members.VerboseTheme());
                                 }
+                            } else if (layoutTheme != 2 || layoutTheme != 1) {
+                                throw new Exception("I can't let you through if you keep playing games with me, choose a view!");
                             }
 
                             int userChoosesMember = int.Parse(this.menu.AskUser("Select member by ID"));
@@ -66,7 +68,7 @@ namespace _1dv607_workshop2_kr222if
                                     }
                                     break;
                                 case 3:
-                                    int UserChoosesBoat = this.menu.MainMenu("Choose 1 - Edit Boat | Choose 2 - View Boats | Choose 3 - Exit");
+                                    int UserChoosesBoat = this.menu.MainMenu("Choose 1 - Register Boat | Choose 2 - View Boats | Choose 3 - Exit");
                                     while (true)
                                     {
                                         if (userChooses == 1) AddBoatToUser(memberFromDb);
@@ -100,10 +102,10 @@ namespace _1dv607_workshop2_kr222if
             }
             return false;
         }
-        public void AddBoatToUser(Member member)
+        public bool AddBoatToUser(Member member)
         {
             int userPicksType = int.Parse(menu.AskUser("0.SailBoat | 1.Motorsailer | 2.Kayak | 3.Other "));
-            var boatType = new BoatTypes();
+            BoatTypes boatType;
             switch (userPicksType)
             {
                 case 0:
@@ -118,9 +120,14 @@ namespace _1dv607_workshop2_kr222if
                 case 3:
                     boatType = BoatTypes.Other;
                     break;
+                    default:
+                    throw new Exception("only 1, 2, 3 ,4 are valid!");
             }
+            WriteLine(boatType);
             int length = int.Parse(menu.AskUser("Length of the boat?"));
             Boat boat = new Boat(boatType, length);
+            if (boat != boat) return false;
+            else return false;
         }
         public void ViewBoatsList(Member member)
         {
