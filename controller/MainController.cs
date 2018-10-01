@@ -49,18 +49,10 @@ namespace _1dv607_workshop2_kr222if
                                 throw new Exception("Not implemented");
                                 case 2:
                                 string userConfirm = this.menu.AskUser($"Delete User: \n{memberFromDb.CompactTheme()}?\n Confirm: Y/N"); userConfirm.ToUpper();
-                                try
-                                {
+
                                 if (userConfirm == "Y") {
                                     database.DeleteMember(userChoosesMember);
-                                } else {
-                                    throw new ArgumentException("Decline - going back to main menu!");
-                                }
-                                }
-                                catch (Exception Ex)
-                                {
-                                    WriteLine(Ex.Message);
-                                }
+                                } 
                                 break;
                             }
 

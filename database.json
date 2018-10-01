@@ -22,12 +22,5 @@
         "BoatType": 0
       }
     ]
-  },
-  {
-    "NumberOfBoats": 0,
-    "Name": "Scorp",
-    "MemberID": 644,
-    "PersonalNumber": "2545",
-    "Boats": []
   }
 ]

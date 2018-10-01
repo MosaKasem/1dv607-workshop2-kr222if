@@ -39,18 +39,20 @@ namespace _1dv607_workshop2_kr222if
             var json = JsonConvert.SerializeObject(_members, Formatting.Indented);
             File.WriteAllText(jsonFile, json);
         }
-        public Member GetMember(int id)
+        public Member GetMember(long id)
         {
             var idNumber = _members.Find(member => member.MemberID == id);
             return idNumber;
         }
         public void DeleteMember(long id)
         {
-            foreach (var member in _members)
+/*             foreach (var member in _members) // not working!?? Collection was modified; enumeration operation may not execute.
             {
+                WriteLine(member.CompactTheme());
                 if (member.MemberID == id)
                     _members.Remove(member);
-            }
+            } */
+            _members.Remove(GetMember(id));
             SaveToDataBase();
         }
         public List<Member> GetAllMembers()
