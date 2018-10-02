@@ -40,48 +40,44 @@ namespace _1dv607_workshop2_kr222if
                                 {
                                     this.menu.ShowInformation(VerboseTheme(members));
                                 }
-                            } else if (layoutTheme != 2 || layoutTheme != 1) {
-                                throw new Exception("I can't let you through if you keep playing games with me, choose a view!");
                             }
-                            
+                            else if (layoutTheme != 2 || layoutTheme != 1)
+                            {
+                                // throw new Exception("Must choose a view");
+                                continue;
+                            }
+
                             int userChoosesMember = int.Parse(this.menu.AskUser("Select member by ID"));
                             Member memberFromDb = this.database.GetMember(userChoosesMember);
 
                             this.menu.ShowInformation(CompactTheme(memberFromDb));
 
                             int userChoosesOption = this.menu.MainMenu("Choose 1 - edit | Choose 2 - delete | choose 3 - boats");
-                            
-                            switch (userChoosesOption)
+                            while (userChoosesOption < 4)
                             {
-                                case 1:
-                                    string updateName = menu.AskUser("Name: ____");
-                                    string updatedPersonalNum = menu.AskUser("PersonalNumber: ____");
-                                    memberFromDb.Name = updateName;
-                                    memberFromDb.PersonalNumber = updatedPersonalNum;
-                                    this.database.SaveToDataBase();
-                                    break;
 
-                                case 2:
-                                    string userConfirm = this.menu.AskUser($"Delete User: \n{CompactTheme(memberFromDb)}?\n Confirm: Y (Capital Letter)!"); userConfirm.ToUpper();
-                                    if (userConfirm == "Y")
-                                    {
-                                        database.DeleteMember(userChoosesMember);
-                                    }
-                                    break;
-                                case 3:
-                                    int UserChoosesBoat = this.menu.MainMenu("Choose 1 - Register Boat | Choose 2 - View Boats | Choose 3 - Exit");
-                                    while (true)
-                                    {
-                                        if (userChooses == 1) {
-                                            // AddBoatToUser(memberFromDb);
-                                            throw new Exception("Not implemented");
+                                switch (userChoosesOption)
+                                {
+                                    case 1:
+                                        string updateName = menu.AskUser("Name: ____");
+                                        string updatedPersonalNum = menu.AskUser("PersonalNumber: ____");
+                                        memberFromDb.Name = updateName;
+                                        memberFromDb.PersonalNumber = updatedPersonalNum;
+                                        this.database.SaveToDataBase();
+                                        break;
+
+                                    case 2:
+                                        string userConfirm = this.menu.AskUser($"Delete User: \n{CompactTheme(memberFromDb)}?\n Confirm: Y (Capital Letter)!"); userConfirm.ToUpper();
+                                        if (userConfirm == "Y")
+                                        {
+                                            database.DeleteMember(userChoosesMember);
                                         }
-                                        if (userChooses == 2) ViewBoatsList(memberFromDb);
-                                        if (userChooses == 3) break;
-                                    }
-                                    break;
+                                        break;
+                                    case 3:
+                                    var boatcontroller = new BoatController();
+                                        break;
+                                }
                             }
-
                             break;
                         case 2:
                             string name = menu.AskUser("Name: ____");
@@ -124,7 +120,7 @@ namespace _1dv607_workshop2_kr222if
                 case 3:
                     boatType = BoatTypes.Other;
                     break;
-                    default:
+                default:
                     throw new Exception("only 1, 2, 3 ,4 are valid!");
             }
             int length = int.Parse(menu.AskUser("Length of the boat?"));
@@ -133,7 +129,7 @@ namespace _1dv607_workshop2_kr222if
         }
         public void ViewBoatsList(Member member)
         {
-            if (member.Boats != null) member.BoatToString();
+            if (member.Boats != null) BoatToString(member);
         }
         public void DeleteBoat(Member member)
         {
@@ -158,9 +154,18 @@ namespace _1dv607_workshop2_kr222if
             string verboseList = $"Member: {member.Name}\n PersonalNumber: {member.PersonalNumber}\n  MemberID: {member.MemberID}\n   ";
             foreach (var boat in member.Boats)
             {
-                verboseList += $"{string.Join("\n\t", member.BoatToString())}";
+                verboseList += $"{string.Join("\n\t", BoatToString(member))}";
             }
             return verboseList;
+        }
+        /// <summary>
+        /// iterate each boat inside member list of boats.
+        /// </summary>
+        /// <param name="member"></param>
+        /// <returns>a string of boats</returns>
+        public List<string> BoatToString(Member member)
+        {
+            return member.Boats.Select(boat => boat.ToString()).ToList();
         }
     }
 

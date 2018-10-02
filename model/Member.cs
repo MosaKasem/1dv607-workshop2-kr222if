@@ -75,10 +75,5 @@ namespace _1dv607_workshop2_kr222if
             this.PersonalNumber  =    personalNumber;
             this.Boats           =  new List<Boat>();
         }
-        public List<string> BoatToString()
-        {
-            return Boats.Select(boat => boat.ToString()).ToList();
-        }
-
     }
 }

@@ -18,9 +18,15 @@ namespace _1dv607_workshop2_kr222if
             Menu menu = new Menu();
             MainController controller = new MainController();
             WriteLine("Cheeky breeky, welcome to jellyblyat club!!");
-
-
-                    controller.MainMenu(database, menu);
+            try
+            {
+                while (controller.MainMenu(database, menu));
+            }
+            catch (Exception Ex)
+            {
+                WriteLine("Wo wa wee... something's gone wrong!: " + Ex.Message);
+            }
+                    // controller.MainMenu(database, menu);
             
             // menu.MainMenu();
             
