@@ -17,8 +17,11 @@ namespace _1dv607_workshop2_kr222if
             Database database = new Database();
             Menu menu = new Menu();
             MainController controller = new MainController();
-            WriteLine("Cheeky breeky, welcome to jellyblyat club!!");            
-            controller.MainMenu(database, menu);
+            WriteLine("Cheeky breeky, welcome to jellyblyat club!!");
+
+
+                    controller.MainMenu(database, menu);
+            
             // menu.MainMenu();
             
 /*             BoatTypes boatType      = BoatTypes.SailBoat;

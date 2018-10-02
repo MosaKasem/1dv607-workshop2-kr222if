@@ -24,7 +24,7 @@ namespace _1dv607_workshop2_kr222if
                 try
                 {
                     if (result != 1 && result != 2 && result != 3)
-                        throw new Exception("Only: 1, 2 or 3 are valid options.\n----\nTry Again!\n----\n");
+                        throw new Exception("\n--------\nTry Again!\n--------");
                 }
                 catch (Exception Ex)
                 {

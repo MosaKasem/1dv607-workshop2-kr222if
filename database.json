@@ -1,9 +1,9 @@
 [
   {
     "NumberOfBoats": 1,
-    "Name": "Johny",
+    "Name": "Skop",
     "MemberID": 20,
-    "PersonalNumber": "234d",
+    "PersonalNumber": "Wee",
     "Boats": [
       {
         "Length": 25.0,
@@ -13,9 +13,9 @@
   },
   {
     "NumberOfBoats": 1,
-    "Name": "Jimmy",
+    "Name": "Skorpppu",
     "MemberID": 40,
-    "PersonalNumber": "JiggleWiggle",
+    "PersonalNumber": "2456",
     "Boats": [
       {
         "Length": 25.0,

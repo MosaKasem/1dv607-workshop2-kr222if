@@ -26,30 +26,31 @@ namespace _1dv607_workshop2_kr222if
                     {
                         case 1:
                             int layoutTheme = int.Parse(menu.AskUser("Choose 1 - compact | Choose 2 - verbose"));
+
                             if (layoutTheme == 1)
                             {
                                 foreach (Member members in this.database.GetAllMembers())
                                 {
-                                    this.menu.ShowInformation(members.CompactTheme());
+                                    this.menu.ShowInformation(CompactTheme(members));
                                 }
-
                             }
                             else if (layoutTheme == 2)
                             {
                                 foreach (Member members in this.database.GetAllMembers())
                                 {
-                                    this.menu.ShowInformation(members.VerboseTheme());
+                                    this.menu.ShowInformation(VerboseTheme(members));
                                 }
                             } else if (layoutTheme != 2 || layoutTheme != 1) {
                                 throw new Exception("I can't let you through if you keep playing games with me, choose a view!");
                             }
-
+                            
                             int userChoosesMember = int.Parse(this.menu.AskUser("Select member by ID"));
                             Member memberFromDb = this.database.GetMember(userChoosesMember);
 
-                            this.menu.ShowInformation(memberFromDb.CompactTheme());
+                            this.menu.ShowInformation(CompactTheme(memberFromDb));
 
                             int userChoosesOption = this.menu.MainMenu("Choose 1 - edit | Choose 2 - delete | choose 3 - boats");
+                            
                             switch (userChoosesOption)
                             {
                                 case 1:
@@ -61,7 +62,7 @@ namespace _1dv607_workshop2_kr222if
                                     break;
 
                                 case 2:
-                                    string userConfirm = this.menu.AskUser($"Delete User: \n{memberFromDb.CompactTheme()}?\n Confirm: Y (Capital Letter)!"); userConfirm.ToUpper();
+                                    string userConfirm = this.menu.AskUser($"Delete User: \n{CompactTheme(memberFromDb)}?\n Confirm: Y (Capital Letter)!"); userConfirm.ToUpper();
                                     if (userConfirm == "Y")
                                     {
                                         database.DeleteMember(userChoosesMember);
@@ -71,7 +72,10 @@ namespace _1dv607_workshop2_kr222if
                                     int UserChoosesBoat = this.menu.MainMenu("Choose 1 - Register Boat | Choose 2 - View Boats | Choose 3 - Exit");
                                     while (true)
                                     {
-                                        if (userChooses == 1) AddBoatToUser(memberFromDb);
+                                        if (userChooses == 1) {
+                                            // AddBoatToUser(memberFromDb);
+                                            throw new Exception("Not implemented");
+                                        }
                                         if (userChooses == 2) ViewBoatsList(memberFromDb);
                                         if (userChooses == 3) break;
                                     }
@@ -102,7 +106,7 @@ namespace _1dv607_workshop2_kr222if
             }
             return false;
         }
-        public bool AddBoatToUser(Member member)
+        public Boat AddBoatToUser()
         {
             int userPicksType = int.Parse(menu.AskUser("0.SailBoat | 1.Motorsailer | 2.Kayak | 3.Other "));
             BoatTypes boatType;
@@ -123,11 +127,9 @@ namespace _1dv607_workshop2_kr222if
                     default:
                     throw new Exception("only 1, 2, 3 ,4 are valid!");
             }
-            WriteLine(boatType);
             int length = int.Parse(menu.AskUser("Length of the boat?"));
             Boat boat = new Boat(boatType, length);
-            if (boat != boat) return false;
-            else return false;
+            return boat;
         }
         public void ViewBoatsList(Member member)
         {
@@ -136,6 +138,29 @@ namespace _1dv607_workshop2_kr222if
         public void DeleteBoat(Member member)
         {
             throw new MissingMethodException();
+        }
+
+
+        /// <summary>
+        /// CompactList accordingly to the requirement
+        /// </summary>
+        /// <returns>CompactList</returns>
+        public string CompactTheme(Member member)
+        {
+            return $"ID number: {member.MemberID}\n Member: {member.Name} \n Boats: {member.NumberOfBoats} ";
+        }
+        /// <summary>
+        /// VerboseList accordingly to the requirement
+        /// </summary>
+        /// <returns>verboseList</returns>
+        public string VerboseTheme(Member member)
+        {
+            string verboseList = $"Member: {member.Name}\n PersonalNumber: {member.PersonalNumber}\n  MemberID: {member.MemberID}\n   ";
+            foreach (var boat in member.Boats)
+            {
+                verboseList += $"{string.Join("\n\t", member.BoatToString())}";
+            }
+            return verboseList;
         }
     }
 

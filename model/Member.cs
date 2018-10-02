@@ -18,12 +18,11 @@ namespace _1dv607_workshop2_kr222if
         private string      _personalNumber ;
         private List<Boat>  _memberBoats    ;
 
-        public int NumberOfBoats {get {return Boats.Count; }}
-
         /* ------------------- */
         /* Getters and Setters */
         /* ------------------- */
 
+        public int NumberOfBoats {get {return Boats.Count; }}
         public string Name
         {
             get { return _name; }
@@ -80,26 +79,6 @@ namespace _1dv607_workshop2_kr222if
         {
             return Boats.Select(boat => boat.ToString()).ToList();
         }
-        /// <summary>
-        /// CompactList accordingly to the requirement
-        /// </summary>
-        /// <returns>CompactList</returns>
-        public string CompactTheme()
-        {
-            return $"ID number: {this.MemberID}\n Member: {this.Name} \n Boats: {this.NumberOfBoats} ";
-        }
-        /// <summary>
-        /// VerboseList accordingly to the requirement
-        /// </summary>
-        /// <returns>verboseList</returns>
-        public string VerboseTheme()
-        {
-            string verboseList = $"Member: {this.Name}\n PersonalNumber: {this._personalNumber}\n  MemberID: {this._memberID}\n   ";
-            foreach (var boat in Boats)
-            {
-                verboseList += $"{string.Join("\n\t", BoatToString())}";
-            }
-            return verboseList;
-        }
+
     }
 }
