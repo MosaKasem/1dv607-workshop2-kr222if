@@ -74,7 +74,9 @@ namespace _1dv607_workshop2_kr222if
                                         }
                                         break;
                                     case 3:
-                                    var boatcontroller = new BoatController();
+                                        var boatcontroller = new BoatController(this.menu, this.database, memberFromDb);
+                                        boatcontroller.BoatMenu();
+                                        // TODO: initiate boatcontroller in BoatController class
                                         break;
                                 }
                             }
@@ -102,40 +104,6 @@ namespace _1dv607_workshop2_kr222if
             }
             return false;
         }
-        public Boat AddBoatToUser()
-        {
-            int userPicksType = int.Parse(menu.AskUser("0.SailBoat | 1.Motorsailer | 2.Kayak | 3.Other "));
-            BoatTypes boatType;
-            switch (userPicksType)
-            {
-                case 0:
-                    boatType = BoatTypes.SailBoat;
-                    break;
-                case 1:
-                    boatType = BoatTypes.Motorsailer;
-                    break;
-                case 2:
-                    boatType = BoatTypes.Kayak;
-                    break;
-                case 3:
-                    boatType = BoatTypes.Other;
-                    break;
-                default:
-                    throw new Exception("only 1, 2, 3 ,4 are valid!");
-            }
-            int length = int.Parse(menu.AskUser("Length of the boat?"));
-            Boat boat = new Boat(boatType, length);
-            return boat;
-        }
-        public void ViewBoatsList(Member member)
-        {
-            if (member.Boats != null) BoatToString(member);
-        }
-        public void DeleteBoat(Member member)
-        {
-            throw new MissingMethodException();
-        }
-
 
         /// <summary>
         /// CompactList accordingly to the requirement

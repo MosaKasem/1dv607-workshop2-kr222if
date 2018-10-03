@@ -24,10 +24,19 @@
     ]
   },
   {
-    "NumberOfBoats": 0,
+    "NumberOfBoats": 2,
     "Name": "5500",
     "MemberID": 87,
     "PersonalNumber": "5wea",
-    "Boats": []
+    "Boats": [
+      {
+        "Length": 45.0,
+        "BoatType": 0
+      },
+      {
+        "Length": 55.0,
+        "BoatType": 0
+      }
+    ]
   }
 ]
