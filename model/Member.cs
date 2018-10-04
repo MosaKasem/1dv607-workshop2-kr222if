@@ -67,9 +67,9 @@ namespace _1dv607_workshop2_kr222if
             // TODO: Add Delete Boat functionality
             throw new NotImplementedException();
         }
-        public void UpdateBoat () {
-            // TODO: Add Delete Boat functionality
-            throw new NotImplementedException();
+        public void UpdateBoat (Boat oB, Boat nB) {
+            oB.BoatType =  nB.BoatType  ;
+            oB.Length   =  nB.Length    ;
         }
         public Boat GetBoat(int id)
         {

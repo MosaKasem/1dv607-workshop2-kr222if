@@ -44,8 +44,7 @@ namespace _1dv607_workshop2_kr222if
                         int newBoatType = int.Parse(menu.AskUser("0.SailBoat | 1.Motorsailer | 2.Kayak | 3.Other "));
                         double newBoatLength = int.Parse(menu.AskUser("Length of the boat?"));
                         var newBoat = new Boat(newBoatType, newBoatLength);
-                        pickedBoat = newBoat;
-                        member.RegisterBoat(pickedBoat);
+                        member.UpdateBoat(pickedBoat, newBoat);
                         this.database.SaveToDataBase();
                     }
                     /*                     while (userChoosesTo != 3)
