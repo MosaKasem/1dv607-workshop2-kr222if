@@ -1,37 +1,44 @@
 [
   {
-    "NumberOfBoats": 1,
-    "Name": "Skop",
-    "MemberID": 20,
-    "PersonalNumber": "Wee",
+    "NumberOfBoats": 7,
+    "Name": "3OKIEDOKIE",
+    "MemberID": 1,
+    "PersonalNumber": "eodon",
     "Boats": [
+      {
+        "Length": 545.0,
+        "BoatType": 2,
+        "ID": 0
+      },
+      {
+        "Length": 345.0,
+        "BoatType": 1,
+        "ID": 0
+      },
+      {
+        "Length": 345.0,
+        "BoatType": 1,
+        "ID": 3
+      },
+      {
+        "Length": 345.0,
+        "BoatType": 0,
+        "ID": 1
+      },
       {
         "Length": 25.0,
-        "BoatType": 0
-      }
-    ]
-  },
-  {
-    "NumberOfBoats": 1,
-    "Name": "Skorpppu",
-    "MemberID": 40,
-    "PersonalNumber": "2456",
-    "Boats": [
+        "BoatType": 1,
+        "ID": 1
+      },
       {
-        "Length": 25.0,
-        "BoatType": 0
-      }
-    ]
-  },
-  {
-    "NumberOfBoats": 1,
-    "Name": "adasdasd",
-    "MemberID": 397,
-    "PersonalNumber": "okieawea",
-    "Boats": [
+        "Length": 234.0,
+        "BoatType": 1,
+        "ID": 2
+      },
       {
-        "Length": 44.0,
-        "BoatType": 2
+        "Length": 34.0,
+        "BoatType": 4,
+        "ID": 3
       }
     ]
   }

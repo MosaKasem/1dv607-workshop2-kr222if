@@ -19,6 +19,7 @@ namespace _1dv607_workshop2_kr222if
                          _lenght = value;}
         }
         public BoatTypes BoatType { get; set; }
+        public int ID { get; set; }
         // public BoatTypes BoatType { get { return _boatType; } set { value = _boatType; } }
         public Boat(int boatType, double length)
         {

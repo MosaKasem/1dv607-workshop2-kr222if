@@ -52,6 +52,15 @@ namespace _1dv607_workshop2_kr222if
         /// <param name="boat"></param>
         public void RegisterBoat (Boat boat) 
         {
+            int maxValue = 0;
+            foreach (var id in Boats)
+            {
+                if (maxValue < id.ID)
+                {
+                    maxValue = ++id.ID;
+                }
+            }
+            boat.ID = maxValue;
             Boats.Add(boat);
         }
         public void DeleteBoat () {

@@ -27,11 +27,11 @@ namespace _1dv607_workshop2_kr222if
                     case 1:
                         int boatType = int.Parse(menu.AskUser("0.SailBoat | 1.Motorsailer | 2.Kayak | 3.Other "));
                         int length = int.Parse(menu.AskUser("Length of the boat?"));
+
                         Boat boat = new Boat(boatType, length);
-
                         member.RegisterBoat(boat);
+                        
                         this.database.SaveToDataBase();
-
                         break;
 
                     case 2:
