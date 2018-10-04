@@ -23,47 +23,54 @@ namespace _1dv607_workshop2_kr222if
         {
             int UserChoosesBoat = this.menu.MainMenu("Choose 1 - Register Boat | Choose 2 - View Boats | Choose 3 - Exit");
 
-                switch (UserChoosesBoat)
-                {
-                    case 1:
-                        int boatType = int.Parse(menu.AskUser("0.SailBoat | 1.Motorsailer | 2.Kayak | 3.Other "));
-                        int length = int.Parse(menu.AskUser("Length of the boat?"));
+            switch (UserChoosesBoat)
+            {
+                case 1:
+                    int boatType = int.Parse(menu.AskUser("0.SailBoat | 1.Motorsailer | 2.Kayak | 3.Other "));
+                    int length = int.Parse(menu.AskUser("Length of the boat?"));
 
-                        Boat boat = new Boat(boatType, length);
-                        member.RegisterBoat(boat);
+                    Boat boat = new Boat(boatType, length);
+                    member.RegisterBoat(boat);
 
-                        this.database.SaveToDataBase();
-                        break;
+                    this.database.SaveToDataBase();
+                    break;
 
-                    case 2:
-                        this.menu.ShowInformation(maincontroller.BoatToString(member).ToString());
+                case 2:
+                    this.menu.ShowInformation(maincontroller.BoatToString(member).ToString());
                         int userPicksBoat = int.Parse(this.menu.AskUser("Select boat by ID"));
-                        break;
-                }
+                        Boat pickedBoat = member.GetBoat(userPicksBoat);
+
+                    int userChoosesTo = int.Parse(this.menu.AskUser("Choose 1 - Edit | Choose 2 - Delete | Choose 3 - Exit"));
+/*                     while (userChoosesTo != 3)
+                    {
+
+                    } */
+                    break;
+            }
 
 
 
             // int userPicksType = int.Parse(menu.AskUser("0.SailBoat | 1.Motorsailer | 2.Kayak | 3.Other "));
         }
-/*         public BoatTypes retrieveBoatType(int type)
-        {
-            var boatType = new BoatTypes();
-            switch (type)
-            {
-                case 0:
-                    boatType = BoatTypes.SailBoat;
-                    break;
-                case 1:
-                    boatType = BoatTypes.Motorsailer;
-                    break;
-                case 2:
-                    boatType = BoatTypes.Kayak;
-                    break;
-                case 3:
-                    boatType = BoatTypes.Other;
-                    break;
-            }
-            return boatType;
-        } */
+        /*         public BoatTypes retrieveBoatType(int type)
+                {
+                    var boatType = new BoatTypes();
+                    switch (type)
+                    {
+                        case 0:
+                            boatType = BoatTypes.SailBoat;
+                            break;
+                        case 1:
+                            boatType = BoatTypes.Motorsailer;
+                            break;
+                        case 2:
+                            boatType = BoatTypes.Kayak;
+                            break;
+                        case 3:
+                            boatType = BoatTypes.Other;
+                            break;
+                    }
+                    return boatType;
+                } */
     }
 }
