@@ -25,9 +25,7 @@ namespace _1dv607_workshop2_kr222if
                 switch (UserChoosesBoat)
                 {
                     case 1:
-                        int userPicksType = int.Parse(menu.AskUser("0.SailBoat | 1.Motorsailer | 2.Kayak | 3.Other "));
-                        var boatType = retrieveBoatType(userPicksType);
-                        WriteLine(boatType);
+                        int boatType = int.Parse(menu.AskUser("0.SailBoat | 1.Motorsailer | 2.Kayak | 3.Other "));
                         int length = int.Parse(menu.AskUser("Length of the boat?"));
                         Boat boat = new Boat(boatType, length);
 
@@ -44,7 +42,7 @@ namespace _1dv607_workshop2_kr222if
 
             // int userPicksType = int.Parse(menu.AskUser("0.SailBoat | 1.Motorsailer | 2.Kayak | 3.Other "));
         }
-        public BoatTypes retrieveBoatType(int type)
+/*         public BoatTypes retrieveBoatType(int type)
         {
             var boatType = new BoatTypes();
             switch (type)
@@ -63,6 +61,6 @@ namespace _1dv607_workshop2_kr222if
                     break;
             }
             return boatType;
-        }
+        } */
     }
 }
