@@ -6,31 +6,6 @@
     "PersonalNumber": "eodon",
     "Boats": [
       {
-        "Length": 545.0,
-        "BoatType": 2,
-        "ID": 0
-      },
-      {
-        "Length": 345.0,
-        "BoatType": 1,
-        "ID": 0
-      },
-      {
-        "Length": 345.0,
-        "BoatType": 1,
-        "ID": 3
-      },
-      {
-        "Length": 345.0,
-        "BoatType": 0,
-        "ID": 1
-      },
-      {
-        "Length": 25.0,
-        "BoatType": 1,
-        "ID": 1
-      },
-      {
         "Length": 234.0,
         "BoatType": 1,
         "ID": 2

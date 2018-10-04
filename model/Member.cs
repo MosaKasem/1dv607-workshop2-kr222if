@@ -71,6 +71,10 @@ namespace _1dv607_workshop2_kr222if
             // TODO: Add Delete Boat functionality
             throw new NotImplementedException();
         }
+        public Boat GetBoat(int id)
+        {
+            return Boats.Find(s => s.ID == id);
+        }
         /// <summary>
         /// Constructor, creates a member
         /// </summary>

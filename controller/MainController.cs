@@ -129,13 +129,19 @@ namespace _1dv607_workshop2_kr222if
         /// </summary>
         /// <param name="member"></param>
         /// <returns>a string of boats</returns>
-        public List<string> BoatToString(Member member)
+        public string BoatToString(Member member)
         {
-            return member.Boats.Select(boat => BoatContent(boat)).ToList();
+            string boatList = $"Boats: \n ";
+            foreach (var b in member.Boats)
+            {
+                boatList += $"\n[{ string.Join("\n ", BoatContent(b))} ]";
+            }
+            return boatList;
+            // return member.Boats.Select(boat => BoatContent(boat)).ToList();
         }
         public string BoatContent(Boat boat)
         {
-            return $"BoatType: {boat.BoatType}, Length: {boat.Length}";
+            return $"BoatType: {boat.BoatType}, Length: {boat.Length}, ID: {boat.ID}";
         }
     }
 

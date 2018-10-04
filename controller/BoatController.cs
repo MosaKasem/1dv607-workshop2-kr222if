@@ -12,6 +12,7 @@ namespace _1dv607_workshop2_kr222if
         private Menu menu;
         private Database database;
         private Member member;
+        MainController maincontroller = new MainController();
         public BoatController(Menu menu, Database database, Member member)
         {
             this.menu = menu;
@@ -30,11 +31,13 @@ namespace _1dv607_workshop2_kr222if
 
                         Boat boat = new Boat(boatType, length);
                         member.RegisterBoat(boat);
-                        
+
                         this.database.SaveToDataBase();
                         break;
 
                     case 2:
+                        this.menu.ShowInformation(maincontroller.BoatToString(member).ToString());
+                        int userPicksBoat = int.Parse(this.menu.AskUser("Select boat by ID"));
                         break;
                 }
 
