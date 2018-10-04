@@ -26,40 +26,43 @@ namespace _1dv607_workshop2_kr222if
                 {
                     case 1:
                         int userPicksType = int.Parse(menu.AskUser("0.SailBoat | 1.Motorsailer | 2.Kayak | 3.Other "));
-                        var boatType = new BoatTypes();
-                        if (userPicksType == 0) boatType = BoatTypes.SailBoat;
-                        if (userPicksType == 1) boatType = BoatTypes.Motorsailer;
-                        if (userPicksType == 2) boatType = BoatTypes.Kayak;
-                        if (userPicksType == 3) boatType = BoatTypes.Other;
-/*                         switch (userPicksType)
-                        {
-                            case 0:
-                                boatType = BoatTypes.SailBoat;
-                                break;
-                            case 1:
-                                boatType = BoatTypes.Motorsailer;
-                                break;
-                            case 2:
-                                boatType = BoatTypes.Kayak;
-                                break;
-                            case 3:
-                                boatType = BoatTypes.Other;
-                                break;
-                        } */
+                        var boatType = retrieveBoatType(userPicksType);
+                        WriteLine(boatType);
                         int length = int.Parse(menu.AskUser("Length of the boat?"));
                         Boat boat = new Boat(boatType, length);
+
                         member.RegisterBoat(boat);
                         this.database.SaveToDataBase();
+
                         break;
 
                     case 2:
                         break;
-
-                    case 3:
-                        break;
                 }
-            
+
+
+
             // int userPicksType = int.Parse(menu.AskUser("0.SailBoat | 1.Motorsailer | 2.Kayak | 3.Other "));
+        }
+        public BoatTypes retrieveBoatType(int type)
+        {
+            var boatType = new BoatTypes();
+            switch (type)
+            {
+                case 0:
+                    boatType = BoatTypes.SailBoat;
+                    break;
+                case 1:
+                    boatType = BoatTypes.Motorsailer;
+                    break;
+                case 2:
+                    boatType = BoatTypes.Kayak;
+                    break;
+                case 3:
+                    boatType = BoatTypes.Other;
+                    break;
+            }
+            return boatType;
         }
     }
 }

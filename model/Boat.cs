@@ -24,10 +24,10 @@ namespace _1dv607_workshop2_kr222if
             BoatType   = boatType;
             Length     = length;
         }
-        public override string ToString()
+/*         public override string ToString()
         {
             return $"BoatType: {BoatType}, Length: {Length}";
-        }
+        } */
 /*         protected Boat(BoatType boatType, double length)
         {
             this.boatType = boatType;

@@ -53,8 +53,7 @@ namespace _1dv607_workshop2_kr222if
                             this.menu.ShowInformation(CompactTheme(memberFromDb));
 
                             int userChoosesOption = this.menu.MainMenu("Choose 1 - edit | Choose 2 - delete | choose 3 - boats");
-                            while (userChoosesOption < 4)
-                            {
+
 
                                 switch (userChoosesOption)
                                 {
@@ -76,10 +75,9 @@ namespace _1dv607_workshop2_kr222if
                                     case 3:
                                         var boatcontroller = new BoatController(this.menu, this.database, memberFromDb);
                                         boatcontroller.BoatMenu();
-                                        // TODO: initiate boatcontroller in BoatController class
                                         break;
                                 }
-                            }
+                            
                             break;
                         case 2:
                             string name = menu.AskUser("Name: ____");
@@ -122,7 +120,7 @@ namespace _1dv607_workshop2_kr222if
             string verboseList = $"Member: {member.Name}\n PersonalNumber: {member.PersonalNumber}\n  MemberID: {member.MemberID}\n   ";
             foreach (var boat in member.Boats)
             {
-                verboseList += $"{string.Join("\n\t", BoatToString(member))}";
+                verboseList += $"{string.Join("\n\t", BoatContent(boat))} ";
             }
             return verboseList;
         }
@@ -133,7 +131,11 @@ namespace _1dv607_workshop2_kr222if
         /// <returns>a string of boats</returns>
         public List<string> BoatToString(Member member)
         {
-            return member.Boats.Select(boat => boat.ToString()).ToList();
+            return member.Boats.Select(boat => BoatContent(boat)).ToList();
+        }
+        public string BoatContent(Boat boat)
+        {
+            return $"BoatType: {boat.BoatType}, Length: {boat.Length}";
         }
     }
 
