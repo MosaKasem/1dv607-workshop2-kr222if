@@ -7,12 +7,11 @@ using static System.Console;
 
 namespace _1dv607_workshop2_kr222if
 {
-    public class BoatController
+    public class BoatController : MainController
     {
         private Menu menu;
         private Database database;
         private Member member;
-        MainController maincontroller = new MainController();
         public BoatController(Menu menu, Database database, Member member)
         {
             this.menu = menu;
@@ -36,15 +35,23 @@ namespace _1dv607_workshop2_kr222if
                     break;
 
                 case 2:
-                    this.menu.ShowInformation(maincontroller.BoatToString(member).ToString());
-                        int userPicksBoat = int.Parse(this.menu.AskUser("Select boat by ID"));
-                        Boat pickedBoat = member.GetBoat(userPicksBoat);
-
+                    this.menu.ShowInformation(BoatToString(member).ToString());
+                    int userPicksBoat = int.Parse(this.menu.AskUser("Select boat by ID"));
+                    Boat pickedBoat = member.GetBoat(userPicksBoat);
                     int userChoosesTo = int.Parse(this.menu.AskUser("Choose 1 - Edit | Choose 2 - Delete | Choose 3 - Exit"));
-/*                     while (userChoosesTo != 3)
+                    if (userChoosesTo == 1)
                     {
+                        int newBoatType = int.Parse(menu.AskUser("0.SailBoat | 1.Motorsailer | 2.Kayak | 3.Other "));
+                        double newBoatLength = int.Parse(menu.AskUser("Length of the boat?"));
+                        var newBoat = new Boat(newBoatType, newBoatLength);
+                        pickedBoat = newBoat;
+                        member.RegisterBoat(pickedBoat);
+                        this.database.SaveToDataBase();
+                    }
+                    /*                     while (userChoosesTo != 3)
+                                        {
 
-                    } */
+                                        } */
                     break;
             }
 

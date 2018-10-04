@@ -1,6 +1,6 @@
 [
   {
-    "NumberOfBoats": 7,
+    "NumberOfBoats": 3,
     "Name": "3OKIEDOKIE",
     "MemberID": 1,
     "PersonalNumber": "eodon",
@@ -8,11 +8,16 @@
       {
         "Length": 234.0,
         "BoatType": 1,
-        "ID": 2
+        "ID": 3
       },
       {
         "Length": 34.0,
         "BoatType": 4,
+        "ID": 3
+      },
+      {
+        "Length": 55.0,
+        "BoatType": 2,
         "ID": 3
       }
     ]
