@@ -15,7 +15,7 @@ namespace _1dv607_workshop2_kr222if
         private static Random randomer = new Random();
         private string jsonFile = "database.json";
         private string database;
-        public List<Member> _members;
+        private List<Member> _members;
         public Database()
         {
             string json;
@@ -61,7 +61,16 @@ namespace _1dv607_workshop2_kr222if
         }
         public long GenerateID()
         {
-            return DateTime.Now.Millisecond;
+            long maxValue = 0;
+            foreach (var member in _members)
+            {
+                if (member.MemberID >= maxValue) {
+                    maxValue = member.MemberID;
+                    maxValue += 1;
+                }
+            }
+            // return DateTime.Now.Millisecond;
+            return maxValue;
         }
     }
 }

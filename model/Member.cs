@@ -55,17 +55,16 @@ namespace _1dv607_workshop2_kr222if
             int maxValue = 0;
             foreach (var id in Boats)
             {
-                if (maxValue < id.ID)
+                if (maxValue <= id.ID)
                 {
-                    maxValue = ++id.ID;
+                    maxValue = id.ID;
                 }
             }
-            boat.ID = maxValue;
+            boat.ID = ++maxValue;
             Boats.Add(boat);
         }
-        public void DeleteBoat () {
-            // TODO: Add Delete Boat functionality
-            throw new NotImplementedException();
+        public void DeleteBoat (Boat boat) {
+            Boats.Remove(boat);
         }
         public void UpdateBoat (Boat oB, Boat nB) {
             oB.BoatType =  nB.BoatType  ;

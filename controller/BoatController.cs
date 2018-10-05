@@ -20,8 +20,10 @@ namespace _1dv607_workshop2_kr222if
         }
         public void BoatMenu()
         {
-            int UserChoosesBoat = this.menu.MainMenu("Choose 1 - Register Boat | Choose 2 - View Boats | Choose 3 - Exit");
-
+            int UserChoosesBoat = 0;
+            do
+            {
+            UserChoosesBoat = this.menu.MainMenu("Choose 1 - Register Boat | Choose 2 - View Boats | Choose 3 - Exit");
             switch (UserChoosesBoat)
             {
                 case 1:
@@ -37,46 +39,38 @@ namespace _1dv607_workshop2_kr222if
                 case 2:
                     this.menu.ShowInformation(BoatToString(member).ToString());
                     int userPicksBoat = int.Parse(this.menu.AskUser("Select boat by ID"));
+                    
                     Boat pickedBoat = member.GetBoat(userPicksBoat);
                     int userChoosesTo = int.Parse(this.menu.AskUser("Choose 1 - Edit | Choose 2 - Delete | Choose 3 - Exit"));
+                    
                     if (userChoosesTo == 1)
                     {
                         int newBoatType = int.Parse(menu.AskUser("0.SailBoat | 1.Motorsailer | 2.Kayak | 3.Other "));
+                        
                         double newBoatLength = int.Parse(menu.AskUser("Length of the boat?"));
                         var newBoat = new Boat(newBoatType, newBoatLength);
-                        member.UpdateBoat(pickedBoat, newBoat);
+
+                        this.member.UpdateBoat(pickedBoat, newBoat);
                         this.database.SaveToDataBase();
                     }
-                    /*                     while (userChoosesTo != 3)
-                                        {
-
-                                        } */
+                    if (userChoosesTo == 2)
+                    {
+                        string userConfirms = this.menu.AskUser($"Delete Boat: \n{BoatContent(pickedBoat)}");
+                        if (userConfirms == "Y")
+                        {
+                            this.member.DeleteBoat(pickedBoat);
+                            this.database.SaveToDataBase();
+                        }
+                    }
+                    break;
+                    case 3:
+                    WriteLine("-------------");
+                    WriteLine("Going Back");
+                    WriteLine("-------------");
                     break;
             }
-
-
-
-            // int userPicksType = int.Parse(menu.AskUser("0.SailBoat | 1.Motorsailer | 2.Kayak | 3.Other "));
-        }
-        /*         public BoatTypes retrieveBoatType(int type)
-                {
-                    var boatType = new BoatTypes();
-                    switch (type)
-                    {
-                        case 0:
-                            boatType = BoatTypes.SailBoat;
-                            break;
-                        case 1:
-                            boatType = BoatTypes.Motorsailer;
-                            break;
-                        case 2:
-                            boatType = BoatTypes.Kayak;
-                            break;
-                        case 3:
-                            boatType = BoatTypes.Other;
-                            break;
-                    }
-                    return boatType;
-                } */
+            } while (UserChoosesBoat != 3);
+            
+         }
     }
 }

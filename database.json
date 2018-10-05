@@ -1,15 +1,30 @@
 [
   {
-    "NumberOfBoats": 1,
-    "Name": "3OKIEDOKIE",
+    "NumberOfBoats": 0,
+    "Name": "55",
+    "MemberID": 0,
+    "PersonalNumber": "45",
+    "Boats": []
+  },
+  {
+    "NumberOfBoats": 0,
+    "Name": "345",
     "MemberID": 1,
-    "PersonalNumber": "eodon",
-    "Boats": [
-      {
-        "Length": 20.0,
-        "BoatType": 0,
-        "ID": 0
-      }
-    ]
+    "PersonalNumber": "45",
+    "Boats": []
+  },
+  {
+    "NumberOfBoats": 0,
+    "Name": "3",
+    "MemberID": 2,
+    "PersonalNumber": "4",
+    "Boats": []
+  },
+  {
+    "NumberOfBoats": 0,
+    "Name": "55",
+    "MemberID": 3,
+    "PersonalNumber": "55",
+    "Boats": []
   }
 ]

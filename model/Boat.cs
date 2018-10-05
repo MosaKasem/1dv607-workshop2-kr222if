@@ -9,9 +9,7 @@ namespace _1dv607_workshop2_kr222if
     public enum BoatTypes {SailBoat = 0, Motorsailer = 1, Kayak = 2, Other = 3}
     public class Boat
     {
-        private double _lenght; 
-        private BoatTypes _boatType;
-        
+        private double _lenght;       
         public double Length 
         {
             get { return _lenght; }
@@ -20,21 +18,11 @@ namespace _1dv607_workshop2_kr222if
         }
         public BoatTypes BoatType { get; set; }
         public int ID { get; set; }
-        // public BoatTypes BoatType { get { return _boatType; } set { value = _boatType; } }
         public Boat(int boatType, double length)
         {
             BoatType   = (BoatTypes)boatType;
             Length     = length;
         }
-/*         public override string ToString()
-        {
-            return $"BoatType: {BoatType}, Length: {Length}";
-        } */
-/*         protected Boat(BoatType boatType, double length)
-        {
-            this.boatType = boatType;
-            this.Length = length;
-        } */
 
     }
 }

@@ -50,7 +50,7 @@ namespace _1dv607_workshop2_kr222if
                             int userChoosesMember = int.Parse(this.menu.AskUser("Select member by ID"));
                             Member memberFromDb = this.database.GetMember(userChoosesMember);
 
-                            this.menu.ShowInformation(CompactTheme(memberFromDb));
+                            this.menu.ShowInformation($"User: {CompactTheme(memberFromDb)}\n\t is selected!");
 
                             int userChoosesOption = this.menu.MainMenu("Choose 1 - edit | Choose 2 - delete | choose 3 - boats");
 
