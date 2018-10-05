@@ -55,7 +55,7 @@ namespace _1dv607_workshop2_kr222if
                     }
                     if (userChoosesTo == 2)
                     {
-                        string userConfirms = this.menu.AskUser($"Delete Boat: \n{BoatContent(pickedBoat)}");
+                        string userConfirms = this.menu.AskUser($"Delete Boat: \n{BoatContent(pickedBoat)}\n Confirm: Y (Capital Letter)!");
                         if (userConfirms == "Y")
                         {
                             this.member.DeleteBoat(pickedBoat);
