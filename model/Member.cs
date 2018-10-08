@@ -47,6 +47,19 @@ namespace _1dv607_workshop2_kr222if
         /* -------------- */
 
         /// <summary>
+        /// Constructor, creates a member
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="personalNumber"></param>
+        /// <param name="memberID"></param>
+        public Member(string name, string personalNumber, long memberID)
+        {
+            this.Name            =              name;
+            this.MemberID        =          memberID;
+            this.PersonalNumber  =    personalNumber;
+            this.Boats           =  new List<Boat>();
+        }
+        /// <summary>
         /// Registers a boat to a member
         /// </summary>ö
         /// <param name="boat"></param>
@@ -72,20 +85,12 @@ namespace _1dv607_workshop2_kr222if
         }
         public Boat GetBoat(int id)
         {
-            return Boats.Find(s => s.ID == id);
-        }
-        /// <summary>
-        /// Constructor, creates a member
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="personalNumber"></param>
-        /// <param name="memberID"></param>
-        public Member(string name, string personalNumber, long memberID)
-        {
-            this.Name            =              name;
-            this.MemberID        =          memberID;
-            this.PersonalNumber  =    personalNumber;
-            this.Boats           =  new List<Boat>();
+            Boat boat = Boats.Find(s => s.ID == id);
+            if (boat == null) 
+            {
+                throw new KeyNotFoundException($"Could not find boat with ID: {id}");
+            }
+            return boat;
         }
     }
 }

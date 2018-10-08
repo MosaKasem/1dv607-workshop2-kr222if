@@ -12,10 +12,17 @@ namespace _1dv607_workshop2_kr222if
 {
     public class Database
     {
+        /* --------- */
+        /* Variables */
+        /* --------- */
         private static Random randomer = new Random();
         private string jsonFile = "database.json";
         private string database;
         private List<Member> _members;
+
+        /// <summary>
+        /// Constructor for reading the json file
+        /// </summary>
         public Database()
         {
             string json;
@@ -25,6 +32,10 @@ namespace _1dv607_workshop2_kr222if
             }
             _members = JsonConvert.DeserializeObject<List<Member>>(json);
         }
+
+        /* -------------- */
+        /* Functionality! */
+        /* -------------- */
         public void AddMember(Member member)
         {
             _members.Add(member);
@@ -46,12 +57,6 @@ namespace _1dv607_workshop2_kr222if
         }
         public void DeleteMember(long id)
         {
-/*             foreach (var member in _members) // not working!?? Collection was modified; enumeration operation may not execute.
-            {
-                WriteLine(member.CompactTheme());
-                if (member.MemberID == id)
-                    _members.Remove(member);
-            } */
             _members.Remove(GetMember(id));
             SaveToDataBase();
         }
@@ -69,7 +74,6 @@ namespace _1dv607_workshop2_kr222if
                     maxValue += 1;
                 }
             }
-            // return DateTime.Now.Millisecond;
             return maxValue;
         }
     }

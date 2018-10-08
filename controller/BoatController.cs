@@ -9,15 +9,27 @@ namespace _1dv607_workshop2_kr222if
 {
     public class BoatController : MainController
     {
+        /* --------- */
+        /* Variables */
+        /* --------- */
         private Menu menu;
         private Database database;
         private Member member;
-        public BoatController(Menu menu, Database database, Member member)
+        /// <summary>
+        /// Constructor for boat controller
+        /// </summary>
+        /// <param name="menu"></param>
+        /// <param name="database"></param>
+        /// <param name="memberFromDb"></param>
+        public BoatController(Menu menu, Database database, Member memberFromDb)
         {
             this.menu = menu;
             this.database = database;
-            this.member = member;
+            this.member = memberFromDb;
         }
+        /* -------------- */
+        /* Functionality! */
+        /* -------------- */
         public void BoatMenu()
         {
             int UserChoosesBoat = 0;
@@ -64,9 +76,9 @@ namespace _1dv607_workshop2_kr222if
                     }
                     break;
                     case 3:
-                    WriteLine("-------------");
-                    WriteLine("Going Back");
-                    WriteLine("-------------");
+                    WriteLine("--------------");
+                    WriteLine("--Going Back--");
+                    WriteLine("--------------");
                     break;
             }
             } while (UserChoosesBoat != 3);

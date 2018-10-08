@@ -21,10 +21,12 @@ namespace _1dv607_workshop2_kr222if
             {
                 try
                 {
+                    
                     userChooses = this.menu.MainMenu("Choose 1 - view members || Choose 2 - create member || Choose 3 - exit app\n");
+
                     switch (userChooses)
                     {
-                        case 1:
+                        case 1:  
                             int layoutTheme = int.Parse(menu.AskUser("Choose 1 - compact | Choose 2 - verbose"));
 
                             if (layoutTheme == 1)
@@ -43,14 +45,14 @@ namespace _1dv607_workshop2_kr222if
                             }
                             else if (layoutTheme != 2 || layoutTheme != 1)
                             {
-                                // throw new Exception("Must choose a view");
-                                continue;
+                                throw new Exception("Must choose a view");
                             }
 
                             int userChoosesMember = int.Parse(this.menu.AskUser("Select member by ID"));
                             Member memberFromDb = this.database.GetMember(userChoosesMember);
 
-                            this.menu.ShowInformation($"User: {CompactTheme(memberFromDb)}\n\t is selected!");
+                            this.menu.ShowInformation($"User: {CompactTheme(memberFromDb)}\n is selected!");
+
 
                             int userChoosesOption = this.menu.MainMenu("Choose 1 - edit | Choose 2 - delete | choose 3 - boats");
 
@@ -104,7 +106,7 @@ namespace _1dv607_workshop2_kr222if
         }
 
         /// <summary>
-        /// CompactList accordingly to the requirement
+        /// CompactList lists ID, Name, Boats Quantity.
         /// </summary>
         /// <returns>CompactList</returns>
         public string CompactTheme(Member member)
@@ -112,7 +114,7 @@ namespace _1dv607_workshop2_kr222if
             return $"ID number: {member.MemberID}\n Member: {member.Name} \n Boats: {member.NumberOfBoats} ";
         }
         /// <summary>
-        /// VerboseList accordingly to the requirement
+        /// VerboseList lists Name, Personal Number, ID, Boats Type and length.
         /// </summary>
         /// <returns>verboseList</returns>
         public string VerboseTheme(Member member)
@@ -137,7 +139,6 @@ namespace _1dv607_workshop2_kr222if
                 boatList += $"\n[{ string.Join("\n ", BoatContent(b))} ]";
             }
             return boatList;
-            // return member.Boats.Select(boat => BoatContent(boat)).ToList();
         }
         public string BoatContent(Boat boat)
         {
