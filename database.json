@@ -21,7 +21,7 @@
     "Boats": []
   },
   {
-    "NumberOfBoats": 1,
+    "NumberOfBoats": 2,
     "Name": "2",
     "MemberID": 3,
     "PersonalNumber": "2",
@@ -30,6 +30,11 @@
         "Length": 545.0,
         "BoatType": 3,
         "ID": 1
+      },
+      {
+        "Length": 55.0,
+        "BoatType": 0,
+        "ID": 2
       }
     ]
   }

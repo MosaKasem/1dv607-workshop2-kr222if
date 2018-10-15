@@ -16,7 +16,7 @@ namespace _1dv607_workshop2_kr222if
         private string       _name          ;
         private long         _memberID       ;
         private string      _personalNumber ;
-        private List<Boat>  _memberBoats    ;
+
 
         /* ------------------- */
         /* Getters and Setters */

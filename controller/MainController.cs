@@ -9,8 +9,18 @@ namespace _1dv607_workshop2_kr222if
 {
     public class MainController
     {
+        /* --------- */
+        /* Variables */
+        /* --------- */
         private Database database;
         private Menu menu;
+
+        /// <summary>
+        /// dependency injection
+        /// </summary>
+        /// <param name="database"></param>
+        /// <param name="menu"></param>
+        /// <returns></returns>
         public bool MainMenu(Database database, Menu menu)
         {
             this.database = database;
@@ -22,7 +32,7 @@ namespace _1dv607_workshop2_kr222if
                 try
                 {
                     
-                    userChooses = this.menu.MainMenu("Choose 1 - view members || Choose 2 - create member || Choose 3 - exit app\n");
+                    userChooses = this.menu.ViewMenu("Choose 1 - view members || Choose 2 - create member || Choose 3 - exit app\n");
 
                     switch (userChooses)
                     {
@@ -54,7 +64,7 @@ namespace _1dv607_workshop2_kr222if
                             this.menu.ShowInformation($"User: {CompactTheme(memberFromDb)}\n is selected!");
 
 
-                            int userChoosesOption = this.menu.MainMenu("Choose 1 - edit | Choose 2 - delete | choose 3 - boats");
+                            int userChoosesOption = this.menu.ViewMenu("Choose 1 - edit | Choose 2 - delete | choose 3 - boats");
 
 
                                 switch (userChoosesOption)
@@ -140,6 +150,12 @@ namespace _1dv607_workshop2_kr222if
             }
             return boatList;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="boat"></param>
+        /// <returns>a string of boat type&length</returns>
         public string BoatContent(Boat boat)
         {
             return $"BoatType: {boat.BoatType}, Length: {boat.Length}, ID: {boat.ID}";

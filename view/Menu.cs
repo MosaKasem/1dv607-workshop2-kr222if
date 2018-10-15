@@ -9,7 +9,7 @@ namespace _1dv607_workshop2_kr222if
 {
     public class Menu
     {
-        public int MainMenu(string message)
+        public int ViewMenu(string message)
         {
             WriteLine(message);
             return ValidateInputChoice();

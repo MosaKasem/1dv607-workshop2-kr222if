@@ -15,9 +15,7 @@ namespace _1dv607_workshop2_kr222if
         /* --------- */
         /* Variables */
         /* --------- */
-        private static Random randomer = new Random();
         private string jsonFile = "database.json";
-        private string database;
         private List<Member> _members;
 
         /// <summary>

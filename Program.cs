@@ -22,7 +22,7 @@ namespace _1dv607_workshop2_kr222if
             }
             catch (Exception Ex)
             {
-                WriteLine("Wo wa wee... something's gone wrong!: " + Ex.Message);
+                WriteLine("Wo woa woaaaaa... something's gone wrong!: " + Ex.Message);
             }
         }
     }

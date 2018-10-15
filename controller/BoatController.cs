@@ -15,8 +15,9 @@ namespace _1dv607_workshop2_kr222if
         private Menu menu;
         private Database database;
         private Member member;
+
         /// <summary>
-        /// Constructor for boat controller
+        /// Constructor for boat controller.
         /// </summary>
         /// <param name="menu"></param>
         /// <param name="database"></param>
@@ -27,6 +28,7 @@ namespace _1dv607_workshop2_kr222if
             this.database = database;
             this.member = memberFromDb;
         }
+        
         /* -------------- */
         /* Functionality! */
         /* -------------- */
@@ -35,7 +37,7 @@ namespace _1dv607_workshop2_kr222if
             int UserChoosesBoat = 0;
             do
             {
-            UserChoosesBoat = this.menu.MainMenu("Choose 1 - Register Boat | Choose 2 - View Boats | Choose 3 - Exit");
+            UserChoosesBoat = this.menu.ViewMenu("Choose 1 - Register Boat | Choose 2 - View Boats | Choose 3 - Exit");
             switch (UserChoosesBoat)
             {
                 case 1:
